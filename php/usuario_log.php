@@ -24,6 +24,8 @@ $_SESSION['S_usuario_conectado']=false;
 $_SESSION['S_usuario']='NO EXISTE USUARIO';
 //si el usuario esta dado de alta en el sistema
 //se enviaran datos de la base de datos
+echo "usuario: " . $usuario . "contraseña: " . $contra;
+
 if(!empty($data)){
     //se compara la contraseña que el usuario escribio en el formulario
     //con la que esta registrada en la base de datos
