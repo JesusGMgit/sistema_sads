@@ -3,8 +3,8 @@
 //parametros de conexion
 //$servername = "localhost";
 $servername = "localhost";
-$username = "u142007641_admin_test";
-//$username="root";
+//$username = "u142007641_admin_test";
+$username="root";
 //$password = "SADS@db1988s";
 $password = "Admintest88";
 $db = "u142007641_sads_db";
