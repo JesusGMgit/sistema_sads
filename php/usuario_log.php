@@ -34,10 +34,12 @@ if(!empty($data)){
         $_SESSION['S_usuario_conectado']=true;
         $_SESSION['S_usuario'] = $data['Us_Usuario'];
         $_SESSION['S_nivel']=$data['Us_Nivel'];
+        echo "a pantalla de opciones";
         header("Location: opciones_paginas.php");
     }else{
         //si la contraseña esta equivocada se regresa de nuevo a la pagina de inicio.
         $_SESSION['S_usuario']='CONTRASEÑA NO VALIDA';
+        echo "a pantalla inicial";
         header("Location:../index.php");
         exit;
     }
