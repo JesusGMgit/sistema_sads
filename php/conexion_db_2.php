@@ -3,11 +3,11 @@
 //parametros de conexion
 //$servername = "localhost";
 $servername = "localhost";
-$username = "id19355992_admin_sads";
+$username = "u142007641_admin_test";
 //$username="root";
 //$password = "SADS@db1988s";
-$password = "Cautinlupa@8";
-$db = "id19355992_sads_db";
+$password = "Admintest88";
+$db = "u142007641_sads_db";
 //$db = "sads_db";
 
 // hacer coneccion
