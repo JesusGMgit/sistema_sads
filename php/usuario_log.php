@@ -17,9 +17,10 @@ if(empty($usuario) || empty($contra)){
 //se busca que el usuario exista en el base de datos
 $result = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
 Global $conn;
+echo "2usuario: " . $usuario . "contraseña: " . $contra;
 $query = $conn->query($result);
 $data=$query->fetch_assoc();
-echo "2usuario: " . $usuario . "contraseña: " . $contra;
+echo $data;
 //se inicializan las variables globales de inicio de sesion.
 $_SESSION['S_usuario_conectado']=false;
 $_SESSION['S_usuario']='NO EXISTE USUARIO';
