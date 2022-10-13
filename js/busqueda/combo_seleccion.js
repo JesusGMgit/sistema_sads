@@ -1,6 +1,6 @@
 let direccion_pagina;
-direccion_pagina="http://jgmweb.tec";
-//direccion_pagina="http://10.10.20.15";
+direccion_pagina="https://jgmweb.tec";
+//direccion_pagina="https://10.10.20.15";
 
 function combo_proyectos() {
     document.getElementById('datos_tabla1').innerHTML = "";

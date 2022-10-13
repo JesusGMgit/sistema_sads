@@ -7,7 +7,7 @@ function descarga(){
 
     if (soldadura == "INTERNA") {
         for(i=1;i<=3;i++){
-            urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_"+i+".php?tubo=" + ID_tubo;
+            urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?tubo=" + ID_tubo;
             tabla_internas_1(urlf,("INTERNA"+i));
         }
         //urlf = "http://10.10.20.15/api/rq_tTuberiaInterna.php?tubo=" + ID_tubo;
@@ -15,7 +15,7 @@ function descarga(){
 
     }else if (soldadura=="EXTERNA"){
         for(i=1;i<=3;i++){
-            urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_"+i+".php?tubo=" + ID_tubo;
+            urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?tubo=" + ID_tubo;
             tabla_externas_1(urlf,("EXTERNA"+i));
         }
         //urlf = "http://10.10.20.15/api/rq_tTuberiaExterna.php?tubo=" + ID_tubo;
