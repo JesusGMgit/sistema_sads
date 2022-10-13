@@ -4,9 +4,9 @@ function fecha_busqueda(){
     document.getElementById('datos_tabla1').innerHTML = "";
     document.getElementById('datos_tabla2').innerHTML = "";
     for(i=1;i<=3;i++){
-        urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_"+i+".php?fecha="+fecha;
+        urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?fecha="+fecha;
         tabla_externas_fnt(urlf,("EXTERNA"+i));
-        urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_"+i+".php?fecha="+fecha;
+        urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?fecha="+fecha;
         tabla_internas_fnt(urlf,("INTERNA"+i));
     }
     
@@ -19,9 +19,9 @@ function no_tubo_busqueda(){
     document.getElementById('datos_tabla2').innerHTML = "";
     console.log(tubo);
     for(i=1;i<=3;i++){
-        urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_"+i+".php?tubo="+tubo;
+        urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?tubo="+tubo;
         tabla_externas_fnt(urlf,("EXTERNA"+i));
-        urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_"+i+".php?tubo="+tubo;
+        urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?tubo="+tubo;
         tabla_internas_fnt(urlf,("INTERNA"+i));
     }
     

@@ -1,3 +1,7 @@
+let direccion_pagina;
+direccion_pagina="http://jgmweb.tec";
+//direccion_pagina="http://10.10.20.15";
+
 function combo_proyectos() {
     document.getElementById('datos_tabla1').innerHTML = "";
     document.getElementById('datos_tabla2').innerHTML = "";
@@ -5,6 +9,7 @@ function combo_proyectos() {
     maquina=document.getElementById("maquina").value;
     soldadura = document.getElementById("soldadura").value;
     index=proyecto.indexOf(" ");
+    
     //console.log("proyectos: "+index+"/"+proyecto.substr(0,index)+"-"+proyecto+" "+soldadura+" "+maquina);
     if (proyecto != "SELECCIONE UNO") {
         if(soldadura =="SELECCIONE UNO" && maquina=="SELECCIONE UNO"){
@@ -13,9 +18,9 @@ function combo_proyectos() {
             document.getElementById('datos_tabla2').innerHTML = "";
 
             for(i=1;i<=3;i++){
-                urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
                 tabla_externas(urlf,("EXTERNA"+i));
-                urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
                 tabla_internas(urlf,("INTERNA"+i));
             }
 
@@ -48,7 +53,7 @@ function combo_soldadura() {
                 <option>EXTERNA3</option>`;
 
                 for(i=1;i<=3;i++){
-                    urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
+                    urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
                     tabla_externas(urlf,("EXTERNA"+i));
                 }
         
@@ -61,7 +66,7 @@ function combo_soldadura() {
                 <option>INTERNA3</option>`;
         
                 for(i=1;i<=3;i++){
-                    urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
+                    urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
                     tabla_internas(urlf,("INTERNA"+i));
                 }
         document.getElementById("maquina").innerHTML=combo
@@ -83,13 +88,13 @@ function combo_maquina() {
         switch(maquina)
         {
             case "INTERNA1":
-                urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_1.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_1.php?proyecto=" + proyecto.substr(0,index);
                 break;
             case "INTERNA2":
-                urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_2.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_2.php?proyecto=" + proyecto.substr(0,index);
                 break;
             case "INTERNA3":
-                urlf = "http://10.10.20.15/api/internas/rq_tTuberiaInterna_3.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_3.php?proyecto=" + proyecto.substr(0,index);
                 break;
             default:
                 break;
@@ -101,13 +106,13 @@ function combo_maquina() {
         switch(maquina)
         {
             case "EXTERNA1":
-                urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_1.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_1.php?proyecto=" + proyecto.substr(0,index);
                 break;
             case "EXTERNA2":
-                urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_2.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_2.php?proyecto=" + proyecto.substr(0,index);
                 break;
             case "EXTERNA3":
-                urlf = "http://10.10.20.15/api/externas/rq_tTuberiaExterna_3.php?proyecto=" + proyecto.substr(0,index);
+                urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_3.php?proyecto=" + proyecto.substr(0,index);
                 break;
             default:
                 break;
