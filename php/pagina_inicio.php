@@ -1,7 +1,9 @@
+<!DOCTYPE html>
+<html>
+
 <?php
 // Initialize the session
 session_start();
- 
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
   $_SESSION['S_usuario']='u1';
@@ -10,8 +12,6 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
 }
 ?>
 
-<!DOCTYPE html>
-<html>
 <title>SADS TUBACERO</title>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
