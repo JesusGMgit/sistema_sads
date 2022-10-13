@@ -2,7 +2,7 @@
 //se agrega el archivo con la configuracion para hacxe conexion
 //con la base  de datos.
 //include('conexion_db.php');
-include('conexion_db2.php');
+include('conexion_db_2.php');
 
 //cuando se da iniciar sesion se checa que no esten vacios los valores 
 //del formuario
