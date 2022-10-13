@@ -42,7 +42,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
     </style>
 </head>
 
-<body class="w3-content w3-border-left w3-border-right">
+<body class="w3-container w3-border-left w3-border-right">
 
     <!-- Sidebar/menu  para las opciones de busqueda
         cada que se presiona aguna opcion la tabla se actualiza-->
@@ -55,7 +55,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             <h3>BUSQUEDA <i class="fa fa-search w3-xlarge"></i></h3>
             <hr>
             <div>
-                <p><label><i class="fa fa-calendar-check-o"></i> PROYECTO</label></p>
+                <p><label><i class="fa fa-book"></i> PROYECTO</label></p>
                 <select onchange="combo_proyectos()" id="proyectos">
                     <option selected>SELECCIONE UNO</option>
                     <?php //esta parte fue en en php para cargar en la tabla la tuberia que coincida
@@ -68,13 +68,13 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 <!-- Cada una de las siguientes consultas se hacen en script con lenjuaje JS
                      , cada un ira cargando en las opciones de busqueda segun la opcion seleccionada-->
                 </select>
-                <p><label><i class="fa fa-calendar-check-o"></i> SOLDADURA</label></p>
+                <p><label><i class="fa fa-object-group"></i> SOLDADURA</label></p>
                 <select onchange="combo_soldadura()" id="soldadura">
                     <option selected>SELECCIONE UNO</option>
                     <option>INTERNA</option>
                     <option>EXTERNA</option>
                 </select>
-                <p><label><i class="fa fa-calendar-o"></i> MAQUINA</label></p>
+                <p><label><i class="fa fa-object-ungroup"></i> MAQUINA</label></p>
                 <select onchange="combo_maquina()" id="maquina">
                     <option selected>SELECCIONE UNO</option>
                     <!-- aqui van las amquinas externas o internas despues de seleccionarlas -->
@@ -87,7 +87,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 <div class="w3-col s3 w3-center"><button onclick="fecha_busqueda()" type="button" class="w3-button w3-white w3-border w3-border-blue">buscar</button></div>
             </div>
             <!-- Mostrara los datos de la tuberia con la ID escrita -->
-            <p><label><i class="fa fa-calendar-check-o"></i> ID DE TUBO</label></p>
+            <p><label><i class="fa fa-sticky-note-o"></i> ID DE TUBO</label></p>
             <div class="w3-row">
                 <div class="w3-col s9 w3-center"><input class="w3-input w3-border" type="text" placeholder="xxxxx" id="no_tubo" name="no_tubo"></div>
                 <div class="w3-col s3 w3-center"><button onclick="no_tubo_busqueda()" type="button" class="w3-button w3-white w3-border w3-border-blue">buscar</button></div>
