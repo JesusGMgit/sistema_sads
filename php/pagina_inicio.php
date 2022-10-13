@@ -1,5 +1,3 @@
-<!DOCTYPE html>
-<html>
 
 <?php
 // Initialize the session
@@ -11,13 +9,16 @@ if(!isset($_SESSION['S_usuario_conectado'])|| !isset($_SESSION['S_usuario'])){
   $_SESSION['S_usuario']='u2';
 }
 ?>
-
-<title>SADS TUBACERO</title>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="../css/pagina_principal.css">
-<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SADS TUBACERO</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../css/pagina_principal.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway">
+</head>
 <body>
 
 <div class="bgimg w3-display-container w3-animate-opacity">
