@@ -11,7 +11,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
 <!DOCTYPE html>
 <html>
-<?php include('conexion_db.php'); ?>
+<?php include('conexion_db_2.php'); ?>
 
 <head>
     <title>BUSQUEDA</title>
