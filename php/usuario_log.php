@@ -8,7 +8,7 @@ include('conexion_db2.php');
 //del formuario
 $usuario = addslashes($_POST['usuario']);
 $contra = addslashes($_POST['contra']);
-
+echo "usuario: " . $usuario . "contraseña: " . $contra;
 if(empty($usuario) || empty($contra)){
     header("Location:../index.php");
     exit();
