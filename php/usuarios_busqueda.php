@@ -113,7 +113,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:80px"></div>
-
+        
+        <div class="w3-container">
         <!-- tabla de resultado de busqueda -->
            <table class="w3-table">
                 <thead>
@@ -132,9 +133,11 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 <tbody id="datos_tabla1">
                         <!--datos de la tabla buscados-->
                 </tbody>
-                <tbody id="datos_tabla2"></tbody>
+                <tbody id="datos_tabla2">
+                
+                </tbody>
             </table>
-
+        </div>
         <!-- Informacion de la pagina y sistema-->
         <div class="w3-container" id="info">
             <h2>INFORMACION</h2>
@@ -200,7 +203,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         function showDivs(n) {
             var i;
             var x = document.getElementsByClassName("mySlides");
-            var dots = document.getElementsByClassName("demo");
+            //var dots = document.getElementsByClassName("demo");
             if (n > x.length) {
                 slideIndex = 1
             }
@@ -211,7 +214,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 x[i].style.display = "none";
             }
             for (i = 0; i < dots.length; i++) {
-                dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
+                //dots[i].className = dots[i].className.replace(" w3-opacity-off", "");
             }
             x[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " w3-opacity-off";
