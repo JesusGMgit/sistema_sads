@@ -1,5 +1,5 @@
 let direccion_pagina;
-direccion_pagina="https://jgmweb.tec";
+direccion_pagina="https://jgmweb.tech";
 //direccion_pagina="https://10.10.20.15";
 
 function combo_proyectos() {

@@ -58,7 +58,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             }
           }  
         ?>
-      <p class="w3-center"><button onclick="window.location.href='php/usuario_logout.php'" class="w3-large w3-button w3-block  w3-center">CERRAR SESION</button></p>
+      <p class="w3-center"><button onclick="window.location.href='usuario_logout.php'" class="w3-large w3-button w3-block  w3-center">CERRAR SESION</button></p>
       <br>
     </div>
   </div>
