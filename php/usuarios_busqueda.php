@@ -114,7 +114,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:80px"></div>
         
-        <div class="w3-container">
+        <div class="w3-container" style="overflow:scroll">
         <!-- tabla de resultado de busqueda -->
            <table class="w3-table">
                 <thead>
