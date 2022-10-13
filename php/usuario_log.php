@@ -8,7 +8,7 @@ include('conexion_db2.php');
 //del formuario
 $usuario = addslashes($_POST['usuario']);
 $contra = addslashes($_POST['contra']);
-echo "usuario: " . $usuario . "contraseña: " . $contra;
+echo "1usuario: " . $usuario . "contraseña: " . $contra;
 if(empty($usuario) || empty($contra)){
     header("Location:../index.php");
     exit();
@@ -19,12 +19,13 @@ $result = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
 Global $conn;
 $query = $conn->query($result);
 $data=$query->fetch_assoc();
+echo "2usuario: " . $usuario . "contraseña: " . $contra;
 //se inicializan las variables globales de inicio de sesion.
 $_SESSION['S_usuario_conectado']=false;
 $_SESSION['S_usuario']='NO EXISTE USUARIO';
 //si el usuario esta dado de alta en el sistema
 //se enviaran datos de la base de datos
-echo "usuario: " . $usuario . "contraseña: " . $contra;
+echo "3usuario: " . $usuario . "contraseña: " . $contra;
 
 if(!empty($data)){
     //se compara la contraseña que el usuario escribio en el formulario
@@ -36,7 +37,7 @@ if(!empty($data)){
         $_SESSION['S_usuario_conectado']=true;
         $_SESSION['S_usuario'] = $data['Us_Usuario'];
         $_SESSION['S_nivel']=$data['Us_Nivel'];
-        echo "a pantalla de opciones";
+        echo "usuario: " . $usuario . "contraseña: " . $contra;
         header("Location: /php/opciones_paginas.php");
     }else{
         //si la contraseña esta equivocada se regresa de nuevo a la pagina de inicio.
