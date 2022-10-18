@@ -1,3 +1,21 @@
+var numero_de_paginas;
+var total_elementos_tabla;
+
+function paginas_de_tabla(){
+    if(elementos_tabla>tamaño_tabla_total){
+        no_paginas=total_elementos_tabla/tamaño_tabla_total;
+        botones_pagina="";
+        boton_pagina="";
+        for (p=1;p<=no_paginas;p++)
+        {
+            boton_pagina=`<a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">${p}</a>`;
+            botones_pagina+=boton_pagina
+        }
+        botones_pagina+=`<a href="#" class="w3-button w3-hover-orange">»</a>`;
+        document.getElementById('paginas_de_la_tabla').innerHTML=botones_pagina;
+        numero_de_paginas=no_paginas;
+    }
+}
 function tabla_externas(urlf,maquina_tabla){
     //console.log(urlf);
     //console.log(maquina);
@@ -8,6 +26,7 @@ function tabla_externas(urlf,maquina_tabla){
         const datos_fetch=(data)=>{
             var tabla_a = "";
             //console.log(data);
+            
             for(i=0;i<data.length;i++)
                 {
                     if (data[i].Tex_Reporte_excel!=""){
@@ -69,3 +88,4 @@ function tabla_internas(urlf,maquina_tabla){
         }
         data_in=0;
 }
+

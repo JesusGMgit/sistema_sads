@@ -1,8 +1,8 @@
 <?php
-// Initialize the session
+//* Initialize the session
 session_start();
  
-// Check if the user is logged in, if not then redirect him to login page
+//todo Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] !== true){
     header("location: ../index.html");
     exit;
@@ -60,8 +60,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                     <option selected>SELECCIONE UNO</option>
                     <?php //esta parte fue en en php para cargar en la tabla la tuberia que coincida
                           //con el poroyecto seleccionado.
-                      foreach ($conn->query('SELECT Pro_ID,Pro_Nombre from proyectos') as $row) { ?>
-                        <option><?php echo $row['Pro_ID'] ." ".$row['Pro_Nombre']  ?></option>
+                      foreach ($conn->query('SELECT Pro_ID,Pro_OrdenTrabajo from proyectos') as $row) { ?>
+                        <option><?php echo $row['Pro_ID'] ." ".$row['Pro_OrdenTrabajo']  ?></option>
                         <?php
                     }
                     ?>
@@ -95,7 +95,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         </div>
         <div class="w3-bar-block">
             <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('mensaje').style.display='block'"><i class="fa fa-rss"></i> REPORTE</a>
-            <a href="#info" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> INFORMACION</a>
+            <a onclick="document.getElementById('info').style.display='block'" href="#" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> INFORMACION</a>
         </div>
     </nav>
 
@@ -114,37 +114,42 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:80px"></div>
         
-        <div class="w3-container" style="overflow:scroll; overflow-y: hidden;">
-        <!-- tabla de resultado de busqueda -->
-           <table class="w3-table">
-                <thead>
-                    <tr class="w3-light-grey">
-                        <th>ID tubo</th>
-                        <th>No TUBO</th>
-                        <th>No PLACA</th>
-                        <th>ID PROYECTO</th>
-                        <th>LOTE ALAMBRE</th>
-                        <th>LOTE FUNDENTE</th>
-                        <th>MAQUINA</th>
-                        <th>FECHA</th>
-                        <th>HORA</th>
-                    </tr>
-                </thead>
-                <tbody id="datos_tabla1">
+        <section>
+            <!--todo contenedor de tablas internas-->
+            <div class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
+                <!-- tabla de resultado de busqueda -->
+                <table class="w3-table-all w3-centered">
+                    <thead>
+                        <tr class="w3-light-grey">
+                            <th>ID tubo</th>
+                            <th>No TUBO</th>
+                            <th>No PLACA</th>
+                            <th>ID PROYECTO</th>
+                            <th>LOTE ALAMBRE</th>
+                            <th>LOTE FUNDENTE</th>
+                            <th>MAQUINA</th>
+                            <th>FECHA</th>
+                            <th>HORA</th>
+                        </tr>
+                    </thead>
+                    <tbody id="datos_tabla1">
                         <!--datos de la tabla buscados-->
-                </tbody>
-                <tbody id="datos_tabla2">
+                    </tbody>
+                    <tbody id="datos_tabla2">
                 
-                </tbody>
-            </table>
-        </div>
-        <!-- Informacion de la pagina y sistema-->
-        <div class="w3-container" id="info">
-            <h2>INFORMACION</h2>
-            <i class="fa fa-database" style="width:30px"></i> Sistema SADS<br>
-            <i class="fa fa-folder-open" style="width:30px"></i>Pagina para busqueda de tuberia<br>
-            <i class="fa fa-gear" style="width:30px"> </i> Version 1.0.1<br>
-            <p>Detalles reportalos en el departamento de mantenimiento.</p>
+                    </tbody>
+                /table>
+            
+            </div>
+
+        </section>
+        
+
+        <!--paginado de tabla -->
+        <div id="paginas_de_la_tabla" class="w3-bar">
+                <a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">«</a>
+                
+                <a href="#" class="w3-button w3-hover-orange">»</a>
         </div>
 
         <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></footer>
@@ -174,6 +179,23 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         </div>
     </div>
 
+     <!--ventana modal de Informacion de la pagina y sistema-->
+    <div id="info" class="w3-modal">
+        <div class="w3-modal-content w3-card-4 w3-animate-zoom" style="max-width:600px">
+            <div class="w3-center"><br>
+                <span onclick="document.getElementById('id01').style.display='none'" class="w3-button w3-xlarge w3-transparent w3-display-topright" title="Close Modal">x</span>
+            </div>
+            <br>
+            <div class="w3-contanier w3-center">
+                <h2>INFORMACION</h2>
+                <i class="fa fa-database" style="width:30px"></i> Sistema SADS<br>
+                <i class="fa fa-folder-open" style="width:30px"></i>Pagina para busqueda de tuberia<br>
+                <i class="fa fa-gear" style="width:30px"> </i> Version 1.0.1<br>
+                <p>Detalles reportalos en el departamento de mantenimiento.</p>
+            </div>
+            <br>
+        </div>
+  </div>
 </body>
 
 <script>

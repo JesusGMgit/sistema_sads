@@ -51,7 +51,7 @@ function combo_soldadura() {
                 <option>EXTERNA1</option>
                 <option>EXTERNA2</option> 
                 <option>EXTERNA3</option>`;
-
+                
                 for(i=1;i<=3;i++){
                     urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
                     tabla_externas(urlf,("EXTERNA"+i));
@@ -100,7 +100,7 @@ function combo_maquina() {
                 break;
         }
         
-        tabla_internas(urlf,maquina);
+        tabla_internas(urlf,maquina,true);
 
     }else if (soldadura=="EXTERNA"){
         switch(maquina)
@@ -118,7 +118,7 @@ function combo_maquina() {
                 break;
         }
         
-        tabla_externas(urlf,maquina);
+        tabla_externas(urlf,maquina,true);
 
     }else{
         combo = `<option selected>SELECCIONE UNO</option>`;
