@@ -138,19 +138,20 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                     <tbody id="datos_tabla2">
                 
                     </tbody>
-                /table>
+                </table>
             
+            </div>
+            <!--paginado de tabla -->
+            <div id="paginas_de_la_tabla" class="w3-bar">
+                <a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">«</a>
+                
+                <a href="#" class="w3-button w3-hover-orange">»</a>
             </div>
 
         </section>
         
 
-        <!--paginado de tabla -->
-        <div id="paginas_de_la_tabla" class="w3-bar">
-                <a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">«</a>
-                
-                <a href="#" class="w3-button w3-hover-orange">»</a>
-        </div>
+        
 
         <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></footer>
 
