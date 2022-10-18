@@ -88,7 +88,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             </div>
             
         </div>
-        <div class="w3-container w3-display-container w3-padding-16">
+        <div class="w3-container w3-display-container w3-padding-16 w3-border-top w3-border-bottom">
             <!-- Mostrara los datos de la tuberia con la ID escrita -->
             <p><label><i class="fa fa-sticky-note-o"></i> ID DE TUBO</label></p>
             <div class="w3-row">
