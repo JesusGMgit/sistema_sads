@@ -86,6 +86,9 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 <div class="w3-col s9 w3-center"><input class="w3-input w3-border" type="text" placeholder="dd/MM/yyyy" id="fecha" name="fecha"></div>
                 <div class="w3-col s3 w3-center"><button onclick="fecha_busqueda()" type="button" class="w3-button w3-white w3-border w3-border-blue">buscar</button></div>
             </div>
+            
+        </div>
+        <div class="w3-container w3-display-container w3-padding-16">
             <!-- Mostrara los datos de la tuberia con la ID escrita -->
             <p><label><i class="fa fa-sticky-note-o"></i> ID DE TUBO</label></p>
             <div class="w3-row">
@@ -136,7 +139,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                         <!--datos de la tabla buscados-->
                     </tbody>
                     <tbody id="datos_tabla2">
-                
+                        <!--datos de la tabla buscados-->
                     </tbody>
                 </table>
             
@@ -149,9 +152,6 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             </div>
 
         </section>
-        
-
-        
 
         <footer class="w3-container w3-padding-16" style="margin-top:32px">Powered by <a href="https://www.w3schools.com/w3css/default.asp" title="W3.CSS" target="_blank" class="w3-hover-text-green">w3.css</a></footer>
 
