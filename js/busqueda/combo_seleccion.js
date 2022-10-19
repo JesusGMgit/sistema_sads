@@ -1,7 +1,7 @@
 let direccion_pagina;
 direccion_pagina="https://jgmweb.tech";
 //direccion_pagina="https://10.10.20.15";
-//crear tablas por maquina 9
+//crear tablas por maquina 10
 function combo_proyectos() {
     document.getElementById('div_tablas_INTERNAS').innerHTML = "";
     document.getElementById('div_tablas_EXTERNAS').innerHTML = "";

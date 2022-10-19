@@ -5,7 +5,7 @@ function crear_tabla(section_exin, maquina) {
     //*crear cuepro de la tabla
     //*poner titulo a la tabla
     let titulo_tabla=`
-                      <h5>DATOS DE TUBERIA EN MAQUINA ${maquina}</h4>
+                      <p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
     document.getElementById(section_exin).innerHTML+=titulo_tabla;
 
