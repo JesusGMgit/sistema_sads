@@ -3,7 +3,7 @@ var total_elementos_tabla;
 
 function crear_tabla(section_exin, maquina) {
     //*crear cuepro de la tabla
-    console.log("maquina: "+maquina+"soldadura: "+section_exin);
+    console.log("maquina: "+maquina+" soldadura: "+section_exin);
     let table = document.createElement('table');
     let id_table=section_exin + "_" + maquina;
     table.setAttribute("id",id_table);
