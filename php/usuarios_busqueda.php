@@ -97,7 +97,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             </div>
         </div>
         <div class="w3-bar-block">
-            <a href="javascript:void(0)" class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('mensaje').style.display='block'"><i class="fa fa-rss"></i> REPORTE</a>
+            <button class="w3-bar-item w3-button w3-padding-16" onclick="document.getElementById('mensaje').style.display='block'"><i class="fa fa-rss"></i> REPORTE</button>
             <a onclick="document.getElementById('info').style.display='block'" href="#" class="w3-bar-item w3-button w3-padding-16"><i class="fa fa-envelope"></i> INFORMACION</a>
         </div>
     </nav>
@@ -116,40 +116,47 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:80px"></div>
+        <div class="w3-container w3-border-top w3-border-bottom">
+            <br>
+            <h4>INTERNAS</h4>
+            <br>
+        </div>
         
-        <section>
+        <section id="INTERNAS">
             <!--todo contenedor de tablas internas-->
-            <div class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
-                <!-- tabla de resultado de busqueda -->
-                <table class="w3-table-all w3-centered">
-                    <thead>
-                        <tr class="w3-light-grey">
-                            <th>ID tubo</th>
-                            <th>No TUBO</th>
-                            <th>No PLACA</th>
-                            <th>ID PROYECTO</th>
-                            <th>LOTE ALAMBRE</th>
-                            <th>LOTE FUNDENTE</th>
-                            <th>MAQUINA</th>
-                            <th>FECHA</th>
-                            <th>HORA</th>
-                        </tr>
-                    </thead>
-                    <tbody id="datos_tabla1">
-                        <!--datos de la tabla buscados-->
-                    </tbody>
-                    <tbody id="datos_tabla2">
-                        <!--datos de la tabla buscados-->
-                    </tbody>
-                </table>
             
+            <div id="div_tablas_INTERNAS" class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
+                <!-- tabla de resultado de busqueda -->
+                
             </div>
-            <!--paginado de tabla -->
+            <!--paginado de tabla 
             <div id="paginas_de_la_tabla" class="w3-bar">
-                <a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">«</a>
+                <a onclick="" href="#" class="w3-button w3-hover-purple">«</a>
                 
                 <a href="#" class="w3-button w3-hover-orange">»</a>
+            </div>-->
+
+        </section>
+
+        <div class="w3-container w3-border-top w3-border-bottom">
+            <br>
+            <h4>INTERNAS</h4>
+            <br>
+        </div>
+        
+        <section id="EXTERNAS">
+            <!--todo contenedor de tablas internas-->
+            
+            <div id="div_tablas_EXTERNAS" class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
+                <!-- tabla de resultado de busqueda -->
+                
             </div>
+            <!--paginado de tabla 
+            <div id="paginas_de_la_tabla" class="w3-bar">
+                <a onclick="" href="#" class="w3-button w3-hover-purple">«</a>
+                
+                <a href="#" class="w3-button w3-hover-orange">»</a>
+            </div>-->
 
         </section>
 
