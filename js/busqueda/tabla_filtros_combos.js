@@ -10,7 +10,7 @@ function crear_tabla(section_exin, maquina) {
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
     tbody.setAttribute("id",maquina);
-
+    console.log("id_tabla: "+id_table);
     table.appendChild(thead);
     table.appendChild(tbody);
     document.getElementById(section_exin).appendChild(table)
