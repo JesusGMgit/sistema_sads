@@ -140,7 +140,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
         <div class="w3-container w3-border-top w3-border-bottom">
             <br>
-            <h4>INTERNAS</h4>
+            <h4>EXTERNAS</h4>
             <br>
         </div>
         

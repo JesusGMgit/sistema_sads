@@ -18,9 +18,9 @@ function crear_tabla(section_exin, maquina) {
     //*crear encabezado de tabla
     let encabezados=["ID tubo","No TUBO","No PLACA","ID PROYECTO","LOTE ALAMBRE","LOTE FUNDENTE","MAQUINA","FECHA","HORA"]
     let fila_encabezados = document.createElement('tr');
-    for(i=0;i<9;i++){
+    for(crear_i=0;crear_i<9;crear_i++){
         let cabezera = document.createElement('th');
-        cabezera.innerHTML = encabezados[i];
+        cabezera.innerHTML = encabezados[crear_i];
         fila_encabezados.appendChild(cabezera);
     }
     thead.appendChild(fila_encabezados);
@@ -107,7 +107,7 @@ function tabla_externas(urlf,maquina_tabla){
         
         const datos_fetch=(data)=>{
             var tabla_a = "";
-            //console.log(data);
+            console.log("no filas: "+data.length);
             
             for(i=0;i<data.length;i++)
             {
