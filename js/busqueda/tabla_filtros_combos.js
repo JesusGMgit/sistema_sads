@@ -11,6 +11,8 @@ function crear_tabla(section_exin, maquina) {
 
     console.log("maquina: "+maquina+" soldadura: "+section_exin);
 
+    let id_div_tabla="div_tablas_"+section_exin;
+
     let table = document.createElement('table');
     let id_table=section_exin + "_" + maquina;
     table.setAttribute("id",id_table);
