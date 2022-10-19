@@ -1,7 +1,7 @@
 let direccion_pagina;
 direccion_pagina="https://jgmweb.tech";
 //direccion_pagina="https://10.10.20.15";
-//crear tablas por maquina 6
+//crear tablas por maquina 8
 function combo_proyectos() {
     document.getElementById('div_tablas_INTERNAS').innerHTML = "";
     document.getElementById('div_tablas_EXTERNAS').innerHTML = "";
@@ -100,7 +100,7 @@ function combo_maquina() {
                 break;
         }
         
-        tabla_internas(urlf,maquina,true);
+        tabla_internas(urlf,maquina);
 
     }else if (soldadura=="EXTERNA"){
         switch(maquina)
@@ -118,7 +118,7 @@ function combo_maquina() {
                 break;
         }
         
-        tabla_externas(urlf,maquina,true);
+        tabla_externas(urlf,maquina);
 
     }else{
         combo = `<option selected>SELECCIONE UNO</option>`;
