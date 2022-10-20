@@ -122,7 +122,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             <br>
         </div>
         
-        <section id="INTERNAS" class="w3-pandding-small">
+        <section id="INTERNAS" class="w3-pa
+        dding">
             <!--todo contenedor de tablas internas-->
 
         </section>
@@ -133,7 +134,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             <br>
         </div>
         
-        <section id="EXTERNAS" class="w3-pandding-small">
+        <section id="EXTERNAS" class="w3-padding">
             <!--todo contenedor de tablas exernas-->
 
         </section>
