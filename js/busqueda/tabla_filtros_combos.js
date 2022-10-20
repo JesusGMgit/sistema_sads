@@ -6,12 +6,12 @@ function crear_tabla(section_exin, maquina) {
     let id_div_tabla="div_tablas_"+section_exin;
     let div_responsive=document.createElement('div');
     div_responsive.setAttribute("id",id_div_tabla);
-    div_responsive.setAttribute("class","w3-responsive w3-padding-small");
+    div_responsive.setAttribute("class","w3-responsive w3-padding");
     
 
     //*crear titulo a la tabla
     let titulo_tabla=`<br>
-                      <p class="center">DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
+                      <p class="w3-center">DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
 
     //*crear cuepro de la tabla

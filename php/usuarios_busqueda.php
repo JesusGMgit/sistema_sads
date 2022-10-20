@@ -177,7 +177,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
                 <h2>INFORMACION</h2>
                 <i class="fa fa-database" style="width:30px"></i> Sistema SADS<br>
                 <i class="fa fa-folder-open" style="width:30px"></i>Pagina para busqueda de tuberia<br>
-                <i class="fa fa-gear" style="width:30px"> </i> Version 1.0.1<br>
+                <i class="fa fa-gear" style="width:30px"> </i> Version 1.2.0<br>
                 <p>Detalles reportalos en el departamento de mantenimiento.</p>
             </div>
             <br>
