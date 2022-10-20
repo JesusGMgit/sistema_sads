@@ -118,7 +118,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
         <div class="w3-hide-large" style="margin-top:80px"></div>
         <div class="w3-container w3-border-top w3-border-bottom w3-centered">
             <br>
-            <h4>INTERNAS</h4>
+            <h4 class="w3-center"><b>TABLAS DE SOLDADURA INTERNA</b></h4>
             <br>
         </div>
         
@@ -130,7 +130,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
         <div class="w3-container w3-border-top w3-border-bottom">
             <br>
-            <h4>EXTERNAS</h4>
+            <h4 class="w3-center"><b>TABLAS DE SOLDADURA EXTERNA</b></h4>
             <br>
         </div>
         

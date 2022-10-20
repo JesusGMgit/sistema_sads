@@ -11,7 +11,7 @@ function crear_tabla(section_exin, maquina) {
 
     //*crear titulo a la tabla
     let titulo_tabla=`<br>
-                      <p class="w3-center">DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
+                      <p class="w3-center"><b>DATOS DE TUBERIA EN MAQUINA ${maquina}</b></p>
                       <br>`;
 
     //*crear cuepro de la tabla
