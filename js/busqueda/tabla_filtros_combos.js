@@ -2,20 +2,18 @@ var numero_de_paginas;
 var total_elementos_tabla;
 
 function crear_tabla(section_exin, maquina) {
-    //*crear cuepro de la tabla
-    //*poner titulo a la tabla
-    /*let parrafo=document.createElement('p');
-    parrafo.setAttribute("id","id"+maquina);
-    parrafo.innerHTML="DATOS DE TUBERIA EN MAQUINA "+ maquina;
-    document.getElementById(section_exin).appendChild(parrafo);*/
+    //*crear div responsive donde se metera la tabla    
+    let id_div_tabla="div_tablas_"+section_exin;
+    let div_responsive=document.createElement('div');
+    div_responsive.setAttribute("id",id_div_tabla);
+    div_responsive.setAttribute("class","w3-responsive");
+    
+
+    //*crear titulo a la tabla
     let titulo_tabla=`<p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
-    
-    
-    console.log("maquina: "+maquina+" soldadura: "+section_exin);
 
-    let id_div_tabla="div_tablas_"+section_exin;
-
+    //*crear cuepro de la tabla
     let table = document.createElement('table');
     let id_table=section_exin + "_" + maquina;
     table.setAttribute("id",id_table);
@@ -26,7 +24,6 @@ function crear_tabla(section_exin, maquina) {
     table.appendChild(thead);
     table.appendChild(tbody);
     
-    
     //*crear encabezado de tabla
     let encabezados=["ID tubo","No TUBO","No PLACA","ID PROYECTO","LOTE ALAMBRE","LOTE FUNDENTE","MAQUINA","FECHA","HORA"]
     let fila_encabezados = document.createElement('tr');
@@ -36,9 +33,11 @@ function crear_tabla(section_exin, maquina) {
         fila_encabezados.appendChild(cabezera);
     }
     thead.appendChild(fila_encabezados);
-    document.getElementById(id_div_tabla).innerHTML+=titulo_tabla;
-    document.getElementById(id_div_tabla).appendChild(table);
 
+    //*CARGAR EN PAGINA LOS ELEMENTOS
+    div_responsive.innerHTML+=titulo_tabla;
+    div_responsive.appendChild(table);
+    document.getElementById(section_exin).appendChild(div_responsive);
 }
 
 function paginas_de_tabla(){

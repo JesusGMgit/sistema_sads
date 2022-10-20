@@ -3,8 +3,8 @@ direccion_pagina="https://jgmweb.tech";
 //direccion_pagina="https://10.10.20.15";
 //crear tablas por maquina 12
 function combo_proyectos() {
-    document.getElementById('div_tablas_INTERNAS').innerHTML = "";
-    document.getElementById('div_tablas_EXTERNAS').innerHTML = "";
+    document.getElementById('INTERNAS').innerHTML = "";
+    document.getElementById('EXTERNAS').innerHTML = "";
     let proyecto = document.getElementById("proyectos").value;
     maquina=document.getElementById("maquina").value;
     soldadura = document.getElementById("soldadura").value;
@@ -14,8 +14,8 @@ function combo_proyectos() {
     if (proyecto != "SELECCIONE UNO") {
         if(soldadura =="SELECCIONE UNO" && maquina=="SELECCIONE UNO"){
 
-            document.getElementById('div_tablas_INTERNAS').innerHTML = "";
-            document.getElementById('div_tablas_EXTERNAS').innerHTML = "";
+            document.getElementById('INTERNAS').innerHTML = "";
+            document.getElementById('EXTERNAS').innerHTML = "";
 
             for(i=1;i<=3;i++){
                 urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
@@ -39,8 +39,8 @@ function combo_proyectos() {
 function combo_soldadura() {
     //que ?
     let urlf="";
-    document.getElementById('div_tablas_INTERNAS').innerHTML = "";
-    document.getElementById('div_tablas_EXTERNAS').innerHTML = "";
+    document.getElementById('INTERNAS').innerHTML = "";
+    document.getElementById('EXTERNAS').innerHTML = "";
     proyecto=document.getElementById("proyectos").value;
     soldadura = document.getElementById("soldadura").value;
     index=proyecto.indexOf(" ");
@@ -77,8 +77,8 @@ function combo_soldadura() {
     }
 }
 function combo_maquina() {
-    document.getElementById('div_tablas_INTERNAS').innerHTML = "";
-    document.getElementById('div_tablas_EXTERNAS').innerHTML = "";
+    document.getElementById('INTERNAS').innerHTML = "";
+    document.getElementById('EXTERNAS').innerHTML = "";
     proyecto=document.getElementById("proyectos").value;
     soldadura = document.getElementById("soldadura").value;
     maquina=document.getElementById("maquina").value;

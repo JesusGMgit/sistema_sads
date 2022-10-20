@@ -1,8 +1,8 @@
 function fecha_busqueda(){
     fecha=document.getElementById('fecha').value;
     //console.log(fecha+ " ");
-    document.getElementById('datos_tabla1').innerHTML = "";
-    document.getElementById('datos_tabla2').innerHTML = "";
+    document.getElementById('INTERNAS').innerHTML = "";
+    document.getElementById('EXTERNAS').innerHTML = "";
     for(i=1;i<=3;i++){
         urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?fecha="+fecha;
         tabla_externas_fnt(urlf,("EXTERNA"+i));
@@ -15,8 +15,8 @@ function fecha_busqueda(){
 
 function no_tubo_busqueda(){
     tubo=document.getElementById('no_tubo').value;
-    document.getElementById('datos_tabla1').innerHTML = "";
-    document.getElementById('datos_tabla2').innerHTML = "";
+    document.getElementById('INTERNAS').innerHTML = "";
+    document.getElementById('EXTERNAS').innerHTML = "";
     console.log(tubo);
     for(i=1;i<=3;i++){
         urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?tubo="+tubo;
