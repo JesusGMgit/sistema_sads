@@ -122,19 +122,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             <br>
         </div>
         
-        <section id="INTERNAS">
+        <section id="INTERNAS" class="w3-pandding-small">
             <!--todo contenedor de tablas internas-->
-            
-            <div id="div_tablas_INTERNAS" class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
-                <!-- tabla de resultado de busqueda -->
-                
-            </div>
-            <!--paginado de tabla 
-            <div id="paginas_de_la_tabla" class="w3-bar">
-                <a onclick="" href="#" class="w3-button w3-hover-purple">«</a>
-                
-                <a href="#" class="w3-button w3-hover-orange">»</a>
-            </div>-->
 
         </section>
 
@@ -144,19 +133,8 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
             <br>
         </div>
         
-        <section id="EXTERNAS">
-            <!--todo contenedor de tablas internas-->
-            
-            <div id="div_tablas_EXTERNAS" class="w3-responsive"><!--class="w3-container" style="overflow:scroll; overflow-y: hidden;"-->
-                <!-- tabla de resultado de busqueda -->
-                
-            </div>
-            <!--paginado de tabla 
-            <div id="paginas_de_la_tabla" class="w3-bar">
-                <a onclick="" href="#" class="w3-button w3-hover-purple">«</a>
-                
-                <a href="#" class="w3-button w3-hover-orange">»</a>
-            </div>-->
+        <section id="EXTERNAS" class="w3-pandding-small">
+            <!--todo contenedor de tablas exernas-->
 
         </section>
 
