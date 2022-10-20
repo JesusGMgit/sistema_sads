@@ -4,11 +4,14 @@ var total_elementos_tabla;
 function crear_tabla(section_exin, maquina) {
     //*crear cuepro de la tabla
     //*poner titulo a la tabla
-    let titulo_tabla=`
-                      <p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
+    let parrafo=document.createElement('p');
+    parrafo.setAttribute("id","id"+maquina);
+    parrafo.innerHTML="DATOS DE TUBERIA EN MAQUINA "+ maquina;
+    document.getElementById(section_exin).appendChild(parrafo);
+    /*let titulo_tabla=`<p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
-    document.getElementById(section_exin).innerHTML+=titulo_tabla;
-
+    document.getElementById(section_exin).innerHTML+=titulo_tabla;*/
+    
     console.log("maquina: "+maquina+" soldadura: "+section_exin);
 
     let id_div_tabla="div_tablas_"+section_exin;
