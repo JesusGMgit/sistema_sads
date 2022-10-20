@@ -6,7 +6,7 @@ function crear_tabla(section_exin, maquina) {
     let id_div_tabla="div_tablas_"+section_exin;
     let div_responsive=document.createElement('div');
     div_responsive.setAttribute("id",id_div_tabla);
-    div_responsive.setAttribute("class","w3-responsive");
+    div_responsive.setAttribute("class","w3-responsive w3-padding-small");
     
 
     //*crear titulo a la tabla
@@ -18,6 +18,7 @@ function crear_tabla(section_exin, maquina) {
     let table = document.createElement('table');
     let id_table=section_exin + "_" + maquina;
     table.setAttribute("id",id_table);
+    table.setAttribute("class","w3-centered");
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
     tbody.setAttribute("id",maquina);
