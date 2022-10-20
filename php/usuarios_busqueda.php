@@ -116,7 +116,7 @@ if(!isset($_SESSION["S_usuario_conectado"]) || $_SESSION["S_usuario_conectado"] 
 
         <!-- Push down content on small screens -->
         <div class="w3-hide-large" style="margin-top:80px"></div>
-        <div class="w3-container w3-border-top w3-border-bottom">
+        <div class="w3-container w3-border-top w3-border-bottom w3-centered">
             <br>
             <h4>INTERNAS</h4>
             <br>

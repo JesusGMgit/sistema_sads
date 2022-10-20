@@ -11,14 +11,14 @@ function crear_tabla(section_exin, maquina) {
 
     //*crear titulo a la tabla
     let titulo_tabla=`<br>
-                      <p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
+                      <p class="center">DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
 
     //*crear cuepro de la tabla
     let table = document.createElement('table');
     let id_table=section_exin + "_" + maquina;
     table.setAttribute("id",id_table);
-    table.setAttribute("class","w3-centered");
+    table.setAttribute("class","w3-table-all w3-centered");
     let thead = document.createElement('thead');
     let tbody = document.createElement('tbody');
     tbody.setAttribute("id",maquina);
