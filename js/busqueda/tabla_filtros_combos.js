@@ -10,7 +10,8 @@ function crear_tabla(section_exin, maquina) {
     
 
     //*crear titulo a la tabla
-    let titulo_tabla=`<p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
+    let titulo_tabla=`<br>
+                      <p>DATOS DE TUBERIA EN MAQUINA ${maquina}</p>
                       <br>`;
 
     //*crear cuepro de la tabla
