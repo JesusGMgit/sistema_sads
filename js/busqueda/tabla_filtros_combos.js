@@ -83,7 +83,8 @@ function tabla_internas(urlf,maquina_tabla,num_maquina_in){
         
         const datos1_fetch=(data_in)=>{
             var tabla_a = "";
-            let botone_paginas
+            let botones_paginas;
+            let registros_mostrados;
             //console.log(data_in);
             console.log("maquina: "+maquina_tabla+" no filas: "+data_in.length);
             //crear botones para paginado
@@ -94,11 +95,13 @@ function tabla_internas(urlf,maquina_tabla,num_maquina_in){
                     botones_paginas=`<a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">${i_pin}</a>`;
                     botones_paginas+=botones_paginas
                 }
-                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`
+                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`;
                 document.getElementById("paginado_"+maquina_tabla).innerHTML+=botones_paginas;
+                registros_mostrados=21;
             }else{
-                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`
+                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`;
                 document.getElementById("paginado_"+maquina_tabla).innerHTML+=botones_paginas;
+                registros_mostrados=data_in,length;
             }
 
 
