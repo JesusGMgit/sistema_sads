@@ -85,7 +85,7 @@ function tabla_internas(urlf,maquina_tabla,num_maquina_in){
             var tabla_a = "";
             let botone_paginas
             //console.log(data_in);
-            console.log("no filas: "+data_in.length);
+            console.log("maquina: "+maquina_tabla+" no filas: "+data_in.length);
             //crear botones para paginado
             total_paginas_maquina=data_in.length/20;
             if (total_paginas_maquina>1)
