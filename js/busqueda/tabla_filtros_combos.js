@@ -1,6 +1,7 @@
 var numero_de_paginas;
 var total_elementos_tabla;
-
+var total_registros_tablas_in=new Array(3);
+var total_registros_tablas_ex=new Array(3);
 function crear_tabla(section_exin, maquina) {
     //*crear div responsive donde se metera la tabla    
     let id_div_tabla="div_tablas_"+section_exin;
@@ -36,10 +37,19 @@ function crear_tabla(section_exin, maquina) {
     }
     thead.appendChild(fila_encabezados);
 
+    //*crear flechas de navegacion por paginas de cada tabla
+    let div_paginado=document.createElement('div');
+    div_paginado.setAttribute("id","paginado_"+maquina);
+    div_paginado.setAttribute("class","w3-bar");
+    boton_flecha_primero=`<a onclik="" href="#" class="w-button w3-hover-red">&laquo;</a>`;
+    //boton_flecha_ultimo=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`;
+    div_paginado.appendChild(boton_flecha_primero);
+
     //*CARGAR EN PAGINA LOS ELEMENTOS
     div_responsive.innerHTML+=titulo_tabla;
     div_responsive.appendChild(table);
     document.getElementById(section_exin).appendChild(div_responsive);
+    document.getElementById(section_exin).appendChild(div_paginado)
 }
 
 function paginas_de_tabla(){
@@ -58,7 +68,7 @@ function paginas_de_tabla(){
     }
 }
 
-function tabla_internas(urlf,maquina_tabla){
+function tabla_internas(urlf,maquina_tabla,num_maquina_in){
     //console.log(urlf);
     //console.log(maquina);
     //?crear tabla para alguna maquina externa
@@ -73,9 +83,26 @@ function tabla_internas(urlf,maquina_tabla){
         
         const datos1_fetch=(data_in)=>{
             var tabla_a = "";
+            let botone_paginas
             //console.log(data_in);
             console.log("no filas: "+data_in.length);
-            for(in_i=0;in_i<data_in.length;in_i++)
+            //crear botones para paginado
+            total_paginas_maquina=data_in.length/20;
+            if (total_paginas_maquina>1)
+            {
+                for(i_pin=1;i_pin<total_paginas_maquina;i_pin++){
+                    botones_paginas=`<a onclick="fecha_busqueda()" href="#" class="w3-button w3-hover-purple">${i_pin}</a>`;
+                    botones_paginas+=botones_paginas
+                }
+                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`
+                document.getElementById("paginado_"+maquina_tabla).innerHTML+=botones_paginas;
+            }else{
+                botones_paginas+=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`
+                document.getElementById("paginado_"+maquina_tabla).innerHTML+=botones_paginas;
+            }
+
+
+            for(in_i=0;in_i<21;in_i++)
             {
                 if (data_in[in_i].Tin_Reporte_excel!=""){
                     id_tubo_insnr=`<td><b>${data_in[in_i].Tin_ID_tubo}</b></td>`;        
@@ -105,7 +132,7 @@ function tabla_internas(urlf,maquina_tabla){
         data_in=0;
 }
 
-function tabla_externas(urlf,maquina_tabla){
+function tabla_externas(urlf,maquina_tabla,num_maquina_ex){
     //console.log(urlf);
     //console.log(maquina);
     //?crear tabla para alguna maquina externa

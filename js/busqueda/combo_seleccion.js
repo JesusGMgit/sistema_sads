@@ -19,9 +19,9 @@ function combo_proyectos() {
 
             for(i=1;i<=3;i++){
                 urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
-                tabla_externas(urlf,("EXTERNA"+i));
+                tabla_externas(urlf,("EXTERNA"+i),i);
                 urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
-                tabla_internas(urlf,("INTERNA"+i));
+                tabla_internas(urlf,("INTERNA"+i),i);
             }
 
             
@@ -54,7 +54,7 @@ function combo_soldadura() {
                 
                 for(i=1;i<=3;i++){
                     urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
-                    tabla_externas(urlf,("EXTERNA"+i));
+                    tabla_externas(urlf,("EXTERNA"+i),i);
                 }
         
         document.getElementById("maquina").innerHTML=combo;
@@ -67,7 +67,7 @@ function combo_soldadura() {
         
                 for(i=1;i<=3;i++){
                     urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_"+i+".php?proyecto=" + proyecto.substr(0,index);
-                    tabla_internas(urlf,("INTERNA"+i));
+                    tabla_internas(urlf,("INTERNA"+i),i);
                 }
         document.getElementById("maquina").innerHTML=combo
     }else{
@@ -77,6 +77,7 @@ function combo_soldadura() {
     }
 }
 function combo_maquina() {
+    let numero_maquina;
     document.getElementById('INTERNAS').innerHTML = "";
     document.getElementById('EXTERNAS').innerHTML = "";
     proyecto=document.getElementById("proyectos").value;
@@ -89,36 +90,42 @@ function combo_maquina() {
         {
             case "INTERNA1":
                 urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_1.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=1;
                 break;
             case "INTERNA2":
                 urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_2.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=2;
                 break;
             case "INTERNA3":
                 urlf = direccion_pagina + "/api/internas/rq_tTuberiaInterna_3.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=3;
                 break;
             default:
                 break;
         }
         
-        tabla_internas(urlf,maquina);
+        tabla_internas(urlf,maquina,numero_maquina);
 
     }else if (soldadura=="EXTERNA"){
         switch(maquina)
         {
             case "EXTERNA1":
                 urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_1.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=1;
                 break;
             case "EXTERNA2":
                 urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_2.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=2;
                 break;
             case "EXTERNA3":
                 urlf = direccion_pagina + "/api/externas/rq_tTuberiaExterna_3.php?proyecto=" + proyecto.substr(0,index);
+                numero_maquina=3;
                 break;
             default:
                 break;
         }
         
-        tabla_externas(urlf,maquina);
+        tabla_externas(urlf,maquina,numero_maquina);
 
     }else{
         combo = `<option selected>SELECCIONE UNO</option>`;
