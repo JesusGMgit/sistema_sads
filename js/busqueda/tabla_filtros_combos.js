@@ -43,7 +43,7 @@ function crear_tabla(section_exin, maquina) {
     div_paginado.setAttribute("class","w3-bar");
     boton_flecha_primero=`<a onclik="" href="#" class="w-button w3-hover-red">&laquo;</a>`;
     //boton_flecha_ultimo=`<a onclik="" href="#" class="w-button w3-hover-red">&raquo;</a>`;
-    div_paginado.appendChild(boton_flecha_primero);
+    div_paginado.innerHTML= boton_flecha_primero;
 
     //*CARGAR EN PAGINA LOS ELEMENTOS
     div_responsive.innerHTML+=titulo_tabla;
