@@ -108,7 +108,7 @@ function update_usuario($Pusuario=0)
     global $conn;
     
     $sql = "UPDATE usuarios SET Us_Usuario='" . $usuario . "', Us_Contra='" . $contraseña . "', Us_Nivel='" . $nivel . ", Us_Descripcion='" . $descripcion . "' WHERE Us_ID=" . $Pusuario;
-    
+    echo "sql request: " . $sql ." ";
     if ($conn->query($sql) === TRUE) {
         echo "Se actualizaron los datos del usuario";
     } else {
