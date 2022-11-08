@@ -7,7 +7,6 @@ try{
     echo "Excepcion capturada: ",  $e->getMessage(), "\\n";
 }
 
-
 //Opciones de consultas 
 $request_method = $_SERVER["REQUEST_METHOD"];
 
@@ -15,7 +14,7 @@ switch ($request_method) {
     case 'GET':
         // obtener datos de la tabla usuarios
         if (!empty($_GET["usuario"])) {
-            $usuario = addslashes($_GET["usuario"]);
+            $usuario = $_GET["usuario"];
             get_usuario($usuario);
         } else {
             get_usuarios();
