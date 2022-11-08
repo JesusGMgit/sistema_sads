@@ -15,6 +15,7 @@ switch ($request_method) {
         // obtener datos de la tabla usuarios
         if (!empty($_GET["usuario"])) {
             $usuario = $_GET["usuario"];
+            echo $usuario;
             get_usuario($usuario);
         } else {
             get_usuarios();
