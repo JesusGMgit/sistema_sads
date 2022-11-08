@@ -89,7 +89,7 @@ function insert_usuario()
 
     $sql = "INSERT INTO usuarios (Us_Usuario, Us_Contra, Us_Nivel,Us_Descripcion)
     VALUES ( '$usuario', '$contraseña','$nivel','$descripcion')";
-
+    echo "sql request: " . $sql ." ";
     if ($conn->query($sql) === TRUE) {
         echo "El usuario fue registrado";
     } else {
