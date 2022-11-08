@@ -15,8 +15,8 @@ switch ($request_method) {
     case 'GET':
         // obtener datos de la tabla usuarios
         if (!empty($_GET["usuario"])) {
-            $id = addslashes($_GET["usuario"]);
-            get_usuario($us);
+            $usuario = addslashes($_GET["usuario"]);
+            get_usuario($usuario);
         } else {
             get_usuarios();
         }

@@ -112,7 +112,7 @@ function tabla_internas(urlf,maquina_tabla,num_maquina_in){
                 }else{
                     id_tubo_insnr=`<td>${data_in[in_i].Tin_ID_tubo}</td>`;
                 }
-                tabla_a +=
+                tabla_a +=3
                         `<tr class="w3-pale-blue">`
                             + id_tubo_insnr + `
                             <td>${data_in[in_i].Tin_No_tubo}</td>
