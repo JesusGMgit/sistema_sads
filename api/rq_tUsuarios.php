@@ -15,7 +15,7 @@ switch ($request_method) {
         // obtener datos de la tabla usuarios
         if (!empty($_GET["usuario"])) {
             $usuario = $_GET["usuario"];
-            echo $usuario;
+            echo "variable: " . $usuario . " ";
             get_usuario($usuario);
         } else {
             get_usuarios();
@@ -66,7 +66,7 @@ function get_usuarios()
     echo json_encode($data);
 }
 
-function get_usuario($usuario = "")
+function get_usuario($usuario)
 {
     $sql = "SELECT * FROM usuarios WHERE Us_Usuario=" . $usuario . "";
     global $conn;
