@@ -68,7 +68,7 @@ function get_usuarios()
 
 function get_usuario($usuario)
 {
-    $sql = "SELECT * FROM usuarios WHERE Us_Usuario=" . $usuario . "";
+    $sql = "SELECT * FROM usuarios WHERE Us_Usuario=\"" . $usuario . "\"";
     echo "query sql: " . $sql . " ";
     global $conn;
     $query = $conn->query($sql);
