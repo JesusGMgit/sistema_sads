@@ -81,10 +81,10 @@ function get_usuario($usuario)
 
 function insert_usuario()
 {
-    @$usuario = addslashes($_POST['Us_usuario']);
-    @$contraseña = addslashes($_POST['Us_contraseña']);
-    @$nivel=addslashes($_POST['Us_nivel']);
-    @$descripcion = addslashes($_POST['Us_descripcion']);
+    @$usuario = addslashes($_GET['Us_usuario']);
+    @$contraseña = addslashes($_GET['Us_contraseña']);
+    @$nivel=addslashes($_GET['Us_nivel']);
+    @$descripcion = addslashes($_GET['Us_descripcion']);
     global $conn;
 
     $sql = "INSERT INTO usuarios (Us_Usuario, Us_Contra, Us_Nivel,Us_Descripcion)
