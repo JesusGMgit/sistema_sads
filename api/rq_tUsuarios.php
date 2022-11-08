@@ -37,7 +37,7 @@ switch ($request_method) {
 
     case 'PUT':
         // actualizar un registro en la tabla
-        $id = intval($_GET["id"]);
+        $id = (int)addslashes($_GET["id"]);
         update_usuario($id);
         break;
 
@@ -101,13 +101,13 @@ function insert_usuario()
 
 function update_usuario($Pusuario=0)
 {
-    @$usuario = addslashes($_POST['Us_usuario']);
-    @$contraseña = addslashes($_POST['Us_contraseña']);
-    @$nivel=addslashes($_POST['Us_nivel']);
-    @$descripcion = addslashes($_POST['Us_descripcion']);
+    @$usuario = addslashes($_GET['Us_usuario']);
+    @$contraseña = addslashes($_GET['Us_contraseña']);
+    @$nivel=addslashes($_GET['Us_nivel']);
+    @$descripcion = addslashes($_GET['Us_descripcion']);
     global $conn;
     
-    $sql = "UPDATE usuarios SET Us_Usuario='" . $usuario . "', Us_Contra='" . $contraseña . "', Us_Nivel='" . $nivel . ", Us_Descripcion='" . $descripcion . "' WHERE Us_ID=" . $Pusuario;
+    $sql = "UPDATE usuarios SET Us_Usuario='" . $usuario . "', Us_Contra='" . $contraseña . "', Us_Nivel='" . $nivel . "', Us_Descripcion='" . $descripcion . "' WHERE Us_ID=" . $Pusuario;
     echo "sql request: " . $sql ." ";
     if ($conn->query($sql) === TRUE) {
         echo "Se actualizaron los datos del usuario";
