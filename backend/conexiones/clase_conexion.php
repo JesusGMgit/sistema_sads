@@ -8,7 +8,7 @@ class Conexion extends mysqli {
 
     function __construct()
     {
-        parent::__construct($this->servername,$this->username,$this->password,$this->db);
+        parent::__construct("localhost","u142007641_admin_test","Adminsads14","u142007641_sads_db");
         $this->set_charset('utf8');
         $this->connect_error==null ? 'conexion exitosa': die('conexion fallida');
     }//final de contructor
