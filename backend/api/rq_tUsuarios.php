@@ -1,7 +1,7 @@
 <?php
 //*Conectar con el servidor
 try{
-    include('../conexion_db_2.php');
+    include('../conexiones/conexion_db_2.php');
     //include('../conexion_db.php');
 } catch(Exception $e){
     echo "Excepcion capturada: ",  $e->getMessage(), "\\n";
