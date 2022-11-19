@@ -22,5 +22,8 @@ class Usuario{
         }
     }//end getAll
     
+    public static function getWhere($id_usuario) {
+        return "id mandada ". $id_usuario . ", pruebas.";
+    }
 }
 ?>
