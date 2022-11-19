@@ -8,6 +8,7 @@ class Usuario{
         $query = "SELECT *FROM  usuarios";
         $resultado = $conexion_db->query($query);
         $datos = [];
+        echo "aqui clase";
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos[]=[
