@@ -1,6 +1,6 @@
 <?php
  
-require_once "../conexiones/conexion_db.php";
+require_once "../conexiones/clase_conexion.php";
 
 class Usuario{
     public static function getAll(){
