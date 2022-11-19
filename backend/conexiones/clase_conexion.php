@@ -1,10 +1,10 @@
 <?php
 
 class Conexion extends mysqli {
-    private $servername = "localhost";
-    private $username = "u142007641_admin_test";
-    private $password = "Adminsads14";
-    private $db = "u142007641_sads_db";
+    //private $servername = "localhost";
+    //private $username = "u142007641_admin_test";
+    //private $password = "Adminsads14";
+    //private $db = "u142007641_sads_db";
 
     function __construct()
     {
