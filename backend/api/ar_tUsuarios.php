@@ -9,7 +9,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
             //echo json_encode(Usuario::getWhere($_GET['id']));
         }//end if
         else {
-            echo json_encode(Usuario::getAll());
+            echo "entro en todos";
+            //echo json_encode(Usuario::getAll());
         }//end else
         break;
 
