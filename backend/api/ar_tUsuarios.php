@@ -14,6 +14,21 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }//end else
         break;
 
+        case 'POST':
+            $datos = json_decode(file_get_contents('php://input'));
+            if($datos != NULL) {
+                if(Usuario::insert($datos->$us_usuario, $datos->$us_nivel, $datos->$us_contra, $datos->$us_descripcion)) {
+                    http_response_code(200);
+                }//end if
+                else {
+                    http_response_code(400);
+                }//end else
+            }//end if
+            else {
+                http_response_code(405);
+            }//end else
+            break;
+
         default:
 
         http_response_code(405);
