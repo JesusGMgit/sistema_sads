@@ -41,10 +41,10 @@ class Usuario{
         }//end if
     }//end getWhere
 
-    public static function insert($us_usuario, $us_nivel, $us_contra, $us_descripcion) {
+    public static function insert($Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
         $conexion_db =new Conexion();
         $query = "INSERT INTO usuarios (Us_Usuario, Us_Nivel, Us_Contra, Us_Descripcion)
-        VALUES('".$us_usuario."', '".$us_nivel."', '".$us_contra."', '".$us_descripcion."')";
+        VALUES('".$Us_Usuario."', '".$Us_Nivel."', '".$Us_Contra."', '".$Us_Descripcion."')";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
