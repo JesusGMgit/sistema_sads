@@ -16,7 +16,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         case 'POST':
             $datos = json_decode(file_get_contents('php://input'));
-            echo $datos;
+           
             if($datos != NULL) {
                 if(Usuario::insert($datos->$Us_Usuario, $datos->$Us_Nivel, $datos->$Us_Contra, $datos->$Us_Descripcion)) {
                     http_response_code(200);
