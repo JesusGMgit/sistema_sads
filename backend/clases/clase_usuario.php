@@ -46,6 +46,7 @@ class Usuario{
         $query = "INSERT INTO usuarios (Us_Usuario, Us_Nivel, Us_Contra, Us_Descripcion)
         VALUES ('$Us_Usuario', '$Us_Nivel', '$Us_Contra', '$Us_Descripcion')";
         $conexion_db->query($query);
+        echo $query;
         if($conexion_db->affected_rows) {
             return TRUE;
         }//end if
