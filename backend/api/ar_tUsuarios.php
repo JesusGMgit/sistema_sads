@@ -40,7 +40,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $_PUT=json_decode(file_get_contents('php://input'),true);
         echo json_encode($_PUT);
         if($_PUT != NULL) {
-            if(Usuario::update($_PUT['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
+            if(Usuario::update($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
                 http_response_code(200);
             }//end if
             else {
