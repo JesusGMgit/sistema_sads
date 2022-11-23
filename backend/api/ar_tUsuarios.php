@@ -17,7 +17,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         case 'POST':
             
             $_POST=json_decode(file_get_contents('php://input'),true);
-            echo json_encode($_POST['Us_Usuario']);
+            echo json_encode($_POST);
             //$datos = json_decode(file_get_contents('php://input'));
             
             if($_POST != NULL) {
