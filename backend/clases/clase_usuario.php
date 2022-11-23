@@ -51,5 +51,28 @@ class Usuario{
         }//end if
         return FALSE;
     }//end insert
+
+    public static function update($Us_ID,$Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
+        $db = new Conexion();
+        $query = "UPDATE usuarios SET 
+                  Us_Usuario='" . $Us_Usuario . "', Us_Contra='" . $Us_Contra . "', Us_Nivel='" . $Us_Nivel . "', Us_Descripcion='" . $Us_Descripcion . 
+                  "' WHERE Us_ID=" . $Us_ID;
+        $db->query($query);
+        if($db->affected_rows) {
+            return TRUE;
+        }//end if
+        return FALSE;
+    }//end update
+
+    public static function delete($Us_ID) {
+        $db = new Conexion();
+        $query = "DELETE FROM usuarios WHERE Us_ID=$Us_ID";
+        $db->query($query);
+        if($db->affected_rows) {
+            return TRUE;
+        }//end if
+        return FALSE;
+    }//end delete
+
 }
 ?>

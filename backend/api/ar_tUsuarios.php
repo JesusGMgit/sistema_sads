@@ -14,31 +14,60 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }//end else
         break;
 
-        case 'POST':
+    case 'POST':
             
-            $_POST=json_decode(file_get_contents('php://input'),true);
-            echo json_encode($_POST);
-            //$datos = json_decode(file_get_contents('php://input'));
+        $_POST=json_decode(file_get_contents('php://input'),true);
+        echo json_encode($_POST);
+        //$datos = json_decode(file_get_contents('php://input'));
             
-            if($_POST != NULL) {
+        if($_POST != NULL) {
                 
-                if(Usuario::insert($_POST['Us_Usuario'],$_POST['Us_Nivel'],$_POST['Us_Contra'],$_POST['Us_Descripcion'])){
+            if(Usuario::insert($_POST['Us_Usuario'],$_POST['Us_Nivel'],$_POST['Us_Contra'],$_POST['Us_Descripcion'])){
                     
-                    http_response_code(200);
-                }//end if
-                else {
-                    http_response_code(400);
-                }//end else
+                http_response_code(200);
             }//end if
             else {
-                http_response_code(405);
+                http_response_code(400);
             }//end else
+        }//end if
+        else {
+            http_response_code(405);
+        }//end else
             
-            break;
+        break;
 
-        default:
+    case 'PUT':
+        $datos = json_decode(file_get_contents('php://input'));
+        if($datos != NULL) {
+            if(Usuario::update($datos->id, $datos->nombre, $datos->ap, $datos->am, $datos->fn, $datos->genero)) {
+                http_response_code(200);
+            }//end if
+            else {
+                http_response_code(400);
+            }//end else
+        }//end if
+        else {
+            http_response_code(405);
+        }//end else
+        break;
 
+    case 'DELETE':
+        if(isset($_GET['id'])){
+            if(Usuario::delete($_GET['id'])) {
+                http_response_code(200);
+            }//end if
+            else {
+                http_response_code(400);
+            }//end else
+        }//end if 
+        else {
+            http_response_code(405);
+        }//end else
+        break;
+
+    default:
         http_response_code(405);
         break;
+
 }//end while
 ?>
