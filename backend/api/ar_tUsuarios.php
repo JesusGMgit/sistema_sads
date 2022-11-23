@@ -19,13 +19,13 @@ switch ($_SERVER['REQUEST_METHOD']) {
            
             if($datos != NULL) {
                 echo "usuario:" . $datos->$Us_Usuario ." ";
-                if(Usuario::insert($datos->$Us_Usuario, $datos->$Us_Nivel, $datos->$Us_Contra, $datos->$Us_Descripcion)) {
+                /*if(Usuario::insert($datos->$Us_Usuario, $datos->$Us_Nivel, $datos->$Us_Contra, $datos->$Us_Descripcion)) {
                     
                     http_response_code(200);
                 }//end if
                 else {
                     http_response_code(400);
-                }//end else
+                }//end else*/
             }//end if
             else {
                 http_response_code(405);
