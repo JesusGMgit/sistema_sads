@@ -4,9 +4,9 @@ require_once "../clases/clase_usuario.php";
 header("Content-Type: application/json");
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
-        if(isset($_GET['id'])) {
+        if(isset($_GET['Us_ID'])) {
             //echo "entro aqui";
-            echo json_encode(Usuario::getWhere($_GET['id']));
+            echo json_encode(Usuario::getWhere($_GET['Us_ID']));
         }//end if
         else {
             //echo "entro en todos";
@@ -37,9 +37,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'PUT':
-        $datos = json_decode(file_get_contents('php://input'));
+        $_PUT=json_decode(file_get_contents('php://input'),true);
+        echo json_encode($_POST);
         if($datos != NULL) {
-            if(Usuario::update($datos->id, $datos->nombre, $datos->ap, $datos->am, $datos->fn, $datos->genero)) {
+            if(Usuario::update($_PUT['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
                 http_response_code(200);
             }//end if
             else {
@@ -52,8 +53,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
     case 'DELETE':
-        if(isset($_GET['id'])){
-            if(Usuario::delete($_GET['id'])) {
+        if(isset($_GET['Us_ID'])){
+            if(Usuario::delete($_GET['Us_ID'])) {
                 http_response_code(200);
             }//end if
             else {
