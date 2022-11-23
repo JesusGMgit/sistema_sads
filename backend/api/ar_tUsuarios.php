@@ -19,10 +19,10 @@ switch ($_SERVER['REQUEST_METHOD']) {
             $_POST=json_decode(file_get_contents('php://input'),true);
             echo " usuario: " . $_POST['Us_Usuario'];
             //$datos = json_decode(file_get_contents('php://input'));
-            /*
-            if($datos != NULL) {
+            
+            if($_POST != NULL) {
                 
-                if(Usuario::insert($datos->$Us_Usuario, $datos->$Us_Nivel, $datos->$Us_Contra, $datos->$Us_Descripcion)) {
+                if(Usuario::insert($_POST['Us_Usuario'],$_POST['Us_Nivel'],$_POST['Us_Contra'],$_POST['Us_Descripcion'])){
                     
                     http_response_code(200);
                 }//end if
@@ -33,7 +33,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
             else {
                 http_response_code(405);
             }//end else
-            */
+            
             break;
 
         default:
