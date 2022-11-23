@@ -1,7 +1,7 @@
 <?php
 
 require_once "../clases/clase_usuario.php";
-
+header("Content-Type: application/json");
 switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
         if(isset($_GET['id'])) {
@@ -15,9 +15,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         break;
 
         case 'POST':
-            echo "informacion: ". file_get_contents('php://input');
+            
             $_POST=json_decode(file_get_contents('php://input'),true);
-            echo " usuario: " . $_POST['Us_Usuario'];
+            echo json_encode($_POST['Us_Usuario']);
             //$datos = json_decode(file_get_contents('php://input'));
             
             if($_POST != NULL) {
