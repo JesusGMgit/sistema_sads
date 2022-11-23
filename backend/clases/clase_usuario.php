@@ -1,9 +1,22 @@
 <?php
  
-require_once "../conexiones/clase_conexion.php";
+require_once "../clases/clase_conexion.php";
 
 class Usuario{
-    public static function getAll(){
+    
+
+    public static function create_usuario($Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
+        $conexion_db =new Conexion();
+        $query = "INSERT INTO usuarios (Us_Usuario, Us_Nivel, Us_Contra, Us_Descripcion)
+        VALUES ('$Us_Usuario', '$Us_Nivel', '$Us_Contra', '$Us_Descripcion')";
+        $conexion_db->query($query);
+        if($conexion_db->affected_rows) {
+            return TRUE;
+        }//end if
+        return FALSE;
+    }//end create_usuario
+
+    public static function read_usuarios(){
         $conexion_db =new Conexion();
         $query = "SELECT *FROM  usuarios";
         $resultado = $conexion_db->query($query);
@@ -20,9 +33,9 @@ class Usuario{
             }//end while
             return $datos;
         }//end if
-    }//end getAll
+    }//end read_usuarios
     
-    public static function getWhere($id_usuario) {
+    public static function read_usuario($id_usuario) {
         $conexion_db =new Conexion();
         $query = "SELECT *FROM  usuarios WHERE Us_ID=$id_usuario";
         $resultado = $conexion_db->query($query);
@@ -39,20 +52,9 @@ class Usuario{
             }//end while
             return $datos;
         }//end if
-    }//end getWhere
+    }//end read_usuario
 
-    public static function insert($Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
-        $conexion_db =new Conexion();
-        $query = "INSERT INTO usuarios (Us_Usuario, Us_Nivel, Us_Contra, Us_Descripcion)
-        VALUES ('$Us_Usuario', '$Us_Nivel', '$Us_Contra', '$Us_Descripcion')";
-        $conexion_db->query($query);
-        if($conexion_db->affected_rows) {
-            return TRUE;
-        }//end if
-        return FALSE;
-    }//end insert
-
-    public static function update($Us_ID,$Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
+    public static function update_usuario($Us_ID,$Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
         $db = new Conexion();
         $query = "UPDATE usuarios SET 
                   Us_Usuario='" . $Us_Usuario . "', Us_Contra='" . $Us_Contra . "', Us_Nivel='" . $Us_Nivel . "', Us_Descripcion='" . $Us_Descripcion . 
@@ -62,9 +64,9 @@ class Usuario{
             return TRUE;
         }//end if
         return FALSE;
-    }//end update
+    }//end update_usuario
 
-    public static function delete($Us_ID) {
+    public static function delete_usuario($Us_ID) {
         $db = new Conexion();
         $query = "DELETE FROM usuarios WHERE Us_ID=$Us_ID";
         $db->query($query);
@@ -72,7 +74,7 @@ class Usuario{
             return TRUE;
         }//end if
         return FALSE;
-    }//end delete
+    }//end delete_usuario
 
 }
 ?>
