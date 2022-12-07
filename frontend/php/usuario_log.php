@@ -9,7 +9,7 @@ include('conexion_db_2.php');
 $usuario = addslashes($_POST['usuario']);
 $contra = addslashes($_POST['contra']);
 if(empty($usuario) || empty($contra)){
-    header("Location:../index.php");
+    header("Location:../../index.php");
     exit();
 }
 
@@ -36,17 +36,17 @@ if(!empty($data)){
         $_SESSION['S_usuario_conectado']=true;
         $_SESSION['S_usuario'] = $data['Us_Usuario'];
         $_SESSION['S_nivel']=$data['Us_Nivel'];
-        header("Location: /php/opciones_paginas.php");
+        header("Location: frontend/php/opciones_paginas.php");
     }else{
         //si la contraseña esta equivocada se regresa de nuevo a la pagina de inicio.
         $_SESSION['S_usuario']='CONTRASEÑA NO VALIDA';
         echo "a pantalla inicial";
-        header("Location:../index.php");
+        header("Location:../../index.php");
         exit;
     }
 }else{
     //si no hay datos del usuario en la base de datos se regresa a la pagina de inicio.
-    header("Location:../index.php");
+    header("Location:../../index.php");
     exit;
 }
 
