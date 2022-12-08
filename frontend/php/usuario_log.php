@@ -2,7 +2,7 @@
 //se agrega el archivo con la configuracion para hacxe conexion
 //con la base  de datos.
 //include('conexion_db.php');
-include('conexion_db_2.php');
+require_once "../../backend/clases/clase_conexion.php";
 
 //cuando se da iniciar sesion se checa que no esten vacios los valores 
 //del formuario
@@ -18,7 +18,7 @@ $result = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
 Global $conn;
 $query = $conn->query($result);
 $data=$query->fetch_assoc();
-echo $data;
+//echo $data;
 
 //se inicializan las variables globales de inicio de sesion.
 $_SESSION['S_usuario_conectado']=false;
