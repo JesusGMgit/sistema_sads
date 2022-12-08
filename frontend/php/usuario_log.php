@@ -13,11 +13,12 @@ if(empty($usuario) || empty($contra)){
     exit();
 }
 
+
+$conexion_db =new Conexion();
 //se busca que el usuario exista en el base de datos
-$result = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
-Global $conn;
-$query = $conn->query($result);
-$data=$query->fetch_assoc();
+$query = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
+$resultado = $conn->query($query);
+$data=$resultado->fetch_assoc();
 //echo $data;
 
 //se inicializan las variables globales de inicio de sesion.
