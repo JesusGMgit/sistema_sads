@@ -34,7 +34,7 @@ class Proyecto{
                     'Pro_Fundente'=>$row['Pro_Fundente'],
                     'Pro_OrdenTrabajo'=>$row['Pro_OrdenTrabajo'],
                     'Pro_Especificacion'=>$row['Pro_Especificacion'],
-                    'Pro_wps'=>$row['Pro_wps']
+                    'Pro_wps'=>$row['Pro_WPS']
                 ];
             }//end while
             return $datos;
@@ -43,7 +43,7 @@ class Proyecto{
     
     public static function Leer_proyecto($id_proyecto) {
         $conexion_db =new Conexion();
-        $query = "SELECT *FROM  usuarios WHERE Us_ID=$id_proyecto";
+        $query = "SELECT *FROM  proyectos WHERE Pro_ID=$id_proyecto";
         $resultado = $conexion_db->query($query);
         $datos = [];
         if($resultado->num_rows){
@@ -56,7 +56,7 @@ class Proyecto{
                     'Pro_Fundente'=>$row['Pro_Fundente'],
                     'Pro_OrdenTrabajo'=>$row['Pro_OrdenTrabajo'],
                     'Pro_Especificacion'=>$row['Pro_Especificacion'],
-                    'Pro_wps'=>$row['Pro_WPS']
+                    'Pro_WPS'=>$row['Pro_WPS']
                 ];
             }//end while
             return $datos;
