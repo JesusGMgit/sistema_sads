@@ -13,11 +13,15 @@ if(empty($usuario) || empty($contra)){
     exit();
 }
 
+$conexion_db =new Conexion();
+        $query = "SELECT *FROM  usuarios";
+        $resultado = $conexion_db->query($query);
+        $datos = [];
 
 $conexion_db =new Conexion();
 //se busca que el usuario exista en el base de datos
 $query = "SELECT * from usuarios where Us_usuario='" . $usuario . "'";
-$resultado = $conn->query($query);
+$resultado = $conexion_db->query($query);
 $data=$resultado->fetch_assoc();
 //echo $data;
 
