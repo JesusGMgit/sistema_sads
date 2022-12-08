@@ -9,7 +9,7 @@ class Proyecto{
                                           $Pro_Fundente,$Pro_OrdenTrabajo,$Pro_Especificacion,$Pro_wps) {
         $conexion_db =new Conexion();
         $query = "INSERT INTO proyectos (Pro_Nombre,Pro_Diametro,Pro_Espesor,Pro_Alambre,
-                                        Pro_Fundente,Pro_OrdenTrabajo,Pro_Especificacion,Pro_wps)
+                                        Pro_Fundente,Pro_OrdenTrabajo,Pro_Especificacion,Pro_WPS)
         VALUES ('$Pro_Nombre', '$Pro_Diametro', '$Pro_Espesor', '$Pro_Alambre','$Pro_Fundente',
                 '$Pro_OrdenTrabajo','$Pro_Especificacion','$Pro_wps')";
         $conexion_db->query($query);
@@ -56,7 +56,7 @@ class Proyecto{
                     'Pro_Fundente'=>$row['Pro_Fundente'],
                     'Pro_OrdenTrabajo'=>$row['Pro_OrdenTrabajo'],
                     'Pro_Especificacion'=>$row['Pro_Especificacion'],
-                    'Pro_wps'=>$row['Pro_wps']
+                    'Pro_wps'=>$row['Pro_WPS']
                 ];
             }//end while
             return $datos;

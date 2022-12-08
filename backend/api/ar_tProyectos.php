@@ -12,7 +12,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         if($_POST != NULL) {
             if(Proyecto::crear_proyecto($_POST['Pro_Nombre'],$_POST['Pro_Diametro'],$_POST['Pro_Espesor'],
                                         $_POST['Pro_Alambre'],$_POST['Pro_Fundente'],$_POST['Pro_OrdenTrabajo']
-                                        ,$_POST['Pro_Especificacion'],$_POST['Pro_wps'])){
+                                        ,$_POST['Pro_Especificacion'],$_POST['Pro_WPS'])){
                     
                 http_response_code(200);
             }//end if
