@@ -29,7 +29,7 @@ class Operador{
                     'Op_Folio'=>$row['Op_Folio'],
                     'Op_Nombre'=>$row['Op_Nombre'],
                     'Op_Clave_soldador'=>$row['Op_Clave_soldador'],
-                    'Op_Puesto'=>$row['Op_puesto']
+                    'Op_Puesto'=>$row['Op_Puesto']
                 ];
             }//end while
             return $datos;
@@ -47,7 +47,7 @@ class Operador{
                     'Op_Folio'=>$row['Op_Folio'],
                     'Op_Nombre'=>$row['Op_Nombre'],
                     'Op_Clave_soldador'=>$row['Op_Clave_soldador'],
-                    'Op_Puesto'=>$row['Op_puesto']
+                    'Op_Puesto'=>$row['Op_Puesto']
                 ];
             }//end while
             return $datos;
