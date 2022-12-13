@@ -42,7 +42,9 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $_PUT=json_decode(file_get_contents('php://input'),true);
         echo json_encode($_PUT);
         if($_PUT != NULL) {
-            if(Proyecto::actualizar_proyecto($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
+            if(Proyecto::actualizar_proyecto($_GET['Pro_ID'],$_PUT['Pro_Nombre'],$_PUT['Pro_Diametro'],$_PUT['Pro_Espesor'],
+                                             $_PUT['Pro_Alambre'],$_PUT['Pro_Fundente'],$_PUT['Pro_OrdenTrabajo'],
+                                             $_PUT['Pro_Especificacion'],$_PUT['Pro_WPS'])) {
                 http_response_code(200);
             }//end if
             else {
