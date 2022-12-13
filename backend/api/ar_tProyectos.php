@@ -28,7 +28,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'GET':
 
-        if(isset($_GET['Us_ID'])) {
+        if(isset($_GET['Pro_ID'])) {
             echo json_encode(Proyecto::Leer_proyecto($_GET['Pro_ID']));
         }//end if
         else {
