@@ -29,6 +29,7 @@ class Proyecto{
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos[]=[
+                    'Pro_ID'=>$row['Pro_ID'],
                     'Pro_Nombre'=>$row['Pro_Nombre'],
                     'Pro_Diametro'=>$row['Pro_Diametro'],
                     'Pro_Espesor'=>$row['Pro_Espesor'],
@@ -51,6 +52,7 @@ class Proyecto{
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos[]=[
+                    'Pro_ID'=>$row['Pro_ID'],
                     'Pro_Nombre'=>$row['Pro_Nombre'],
                     'Pro_Diametro'=>$row['Pro_Diametro'],
                     'Pro_Espesor'=>$row['Pro_Espesor'],
