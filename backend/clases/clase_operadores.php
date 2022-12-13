@@ -68,7 +68,7 @@ class Operador{
 
     public static function borrar_operador($Op_Folio) {
         $conexion_db = new Conexion();
-        $query = "DELETE FROM operadores WHERE Po_Folio=$Op_Folio";
+        $query = "DELETE FROM operadores WHERE Op_Folio=$Op_Folio";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
