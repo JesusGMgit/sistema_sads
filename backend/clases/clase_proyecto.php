@@ -74,7 +74,7 @@ class Proyecto{
                   Pro_Nombre='" . $Pro_Nombre . "', Pro_Diametro='" . $Pro_Diametro . "', Pro_Espesor='" . $Pro_Espesor . 
                   "', Pro_Alambre='" . $Pro_Alambre . "', Pro_Fundente='" . $Pro_Fundente . "',Pro_OrdenTrabajo='" . $Pro_OrdenTrabajo .
                   "', Pro_Especificacion='" . $Pro_Especificacion . "'Pro_WPS='" . $Pro_WPS .
-                  "' WHERE Us_ID=" . $Pro_ID;
+                  "' WHERE Pro_ID=" . $Pro_ID;
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
