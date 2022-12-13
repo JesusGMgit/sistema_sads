@@ -40,7 +40,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'PUT':
 
         $_PUT=json_decode(file_get_contents('php://input'),true);
-        echo json_encode($_PUT);
+        //echo json_encode($_PUT);
         if($_PUT != NULL) {
             if(Proyecto::actualizar_proyecto($_GET['Pro_ID'],$_PUT['Pro_Nombre'],$_PUT['Pro_Diametro'],$_PUT['Pro_Espesor'],
                                              $_PUT['Pro_Alambre'],$_PUT['Pro_Fundente'],$_PUT['Pro_OrdenTrabajo'],
