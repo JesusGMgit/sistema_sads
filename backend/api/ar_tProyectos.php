@@ -42,7 +42,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         $_PUT=json_decode(file_get_contents('php://input'),true);
         echo json_encode($_PUT);
         if($_PUT != NULL) {
-            if(Usuario::update_usuario($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
+            if(Proyecto::actualizar_proyecto($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
                 http_response_code(200);
             }//end if
             else {
@@ -57,8 +57,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'DELETE':
 
-        if(isset($_GET['Us_ID'])){
-            if(Usuario::delete_usuario($_GET['Us_ID'])) {
+        if(isset($_GET['Pro_ID'])){
+            if(Proyecto::borrar_proyecto($_GET['Pro_ID'])) {
                 http_response_code(200);
             }//end if
             else {

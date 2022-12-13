@@ -2,7 +2,9 @@
  
 require_once "../clases/clase_conexion.php";
 
+
 class Proyecto{
+    
     
 
     public static function crear_proyecto($Pro_Nombre,$Pro_Diametro,$Pro_Espesor,$Pro_Alambre,
@@ -63,23 +65,26 @@ class Proyecto{
         }//end if
     }//end read_usuario
 
-    public static function update_usuario($Us_ID,$Us_Usuario, $Us_Nivel, $Us_Contra, $Us_Descripcion) {
-        $db = new Conexion();
-        $query = "UPDATE usuarios SET 
-                  Us_Usuario='" . $Us_Usuario . "', Us_Contra='" . $Us_Contra . "', Us_Nivel='" . $Us_Nivel . "', Us_Descripcion='" . $Us_Descripcion . 
-                  "' WHERE Us_ID=" . $Us_ID;
-        $db->query($query);
-        if($db->affected_rows) {
+    public static function actualizar_proyecto($Pro_ID,$Pro_Nombre, $Pro_Diametro, $Pro_Espesor, $Pro_Alambre,
+                                               $Pro_Fundente,$Pro_OrdenTrabajo,$Pro_Especificacion,$Pro_WPS) {
+        $conexion_db = new Conexion();
+        $query = "UPDATE proyectos SET 
+                  Pro_Nombre='" . $Pro_Nombre . "', Pro_Diametro='" . $Pro_Diametro . "', Pro_Espesor='" . $Pro_Espesor . 
+                  "', Pro_Alambre='" . $Pro_Alambre . "', Pro_Fundente='" . $Pro_Fundente . "',Pro_OrdenTrabajo='" . $Pro_OrdenTrabajo .
+                  "', Pro_Especificacion='" . $Pro_Especificacion . "'Pro_WPS='" . $Pro_WPS .
+                  "' WHERE Us_ID=" . $Pro_ID;
+        $conexion_db->query($query);
+        if($conexion_db->affected_rows) {
             return TRUE;
         }//end if
         return FALSE;
     }//end update_usuario
 
-    public static function delete_usuario($Us_ID) {
-        $db = new Conexion();
-        $query = "DELETE FROM usuarios WHERE Us_ID=$Us_ID";
-        $db->query($query);
-        if($db->affected_rows) {
+    public static function borrar_proyecto($Pro_ID) {
+        $conexion_db = new Conexion();
+        $query = "DELETE FROM proyectos WHERE Pro_ID=$Pro_ID";
+        $conexion_db->query($query);
+        if($conexion_db->affected_rows) {
             return TRUE;
         }//end if
         return FALSE;
