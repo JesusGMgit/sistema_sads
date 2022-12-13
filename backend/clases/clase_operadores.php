@@ -36,9 +36,9 @@ class Operador{
         }//end if
     }//end read_usuarios
     
-    public static function Leer_operador($id_operador) {
+    public static function Leer_operador($Op_Folio) {
         $conexion_db =new Conexion();
-        $query = "SELECT *FROM  operadores WHERE Op_Folio=$id_operador";
+        $query = "SELECT *FROM  operadores WHERE Op_Folio=$Op_Folio";
         $resultado = $conexion_db->query($query);
         $datos = [];
         if($resultado->num_rows){
