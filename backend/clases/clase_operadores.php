@@ -57,8 +57,7 @@ class Operador{
     public static function actualizar_operador($Op_Folio,$Op_Nombre,$Op_Clave_soldador,$Op_Puesto) {
         $conexion_db = new Conexion();
         $query = "UPDATE operadores SET 
-                  Op_Nombre='" . $Op_Nombre . "', Op_Clave_soldador='" . $Op_Clave_soldador . 
-                  "', Op_Puesto='" . $Op_Puesto . 
+                  Op_Nombre='" . $Op_Nombre . "', Op_Clave_soldador='" . $Op_Clave_soldador . "', Op_Puesto='" . $Op_Puesto . 
                   "' WHERE Op_Folio=" . $Op_Folio;
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
