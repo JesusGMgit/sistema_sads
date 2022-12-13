@@ -38,6 +38,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'PUT':
 
         $_PUT=json_decode(file_get_contents('php://input'),true);
+        echo "get: ". $_GET['Us_ID'];
         echo json_encode($_PUT);
         /*if($_PUT != NULL) {
             if(Usuario::update_usuario($_GET['Us_ID'],$_PUT['Us_Usuario'],$_PUT['Us_Nivel'],$_PUT['Us_Contra'],$_PUT['Us_Descripcion'])) {
