@@ -28,9 +28,10 @@ class soldadura_externa{
     public static function Leer_tuberia_externa($tuberia_ex123){
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ". $tuberia_ex123;
-        $resultado = $conexion_db->query($query);
         echo "request: " . $query;
         /*
+        $resultado = $conexion_db->query($query);
+        
         $datos = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
