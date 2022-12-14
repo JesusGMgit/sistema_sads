@@ -30,6 +30,7 @@ class soldadura_externa{
         $query = "SELECT *FROM ". $tuberia_ex123;
         $resultado = $conexion_db->query($query);
         echo "request: " . $query;
+        /*
         $datos = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
@@ -47,9 +48,12 @@ class soldadura_externa{
                     'Tex_Archivos_excel'=>$row['Tex_Archivos_excel'],
                     'Tex_Observaciones'=>$row['Tex_Observaciones']
                 ];
+                
             }//end while
             return $datos;
+            
         }//end if
+        */
     }//end read_usuarios
     
     public static function Leer_tubo_externa($tuberia_ex123,$ID_tubo) {
