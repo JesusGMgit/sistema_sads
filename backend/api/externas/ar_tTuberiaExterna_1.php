@@ -1,9 +1,7 @@
 <?php
 
-require_once "../../clases/clase_soldadura_externa.php";
-
+//require_once "../../clases/clase_soldadura_externa.php";
 header("Content-Type: application/json");
-
 switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'POST':
