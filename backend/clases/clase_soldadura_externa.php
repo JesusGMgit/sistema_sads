@@ -1,6 +1,6 @@
 <?php
  
-require_once "../../clases/clase_conexion.php";
+require_once "../clases/clase_conexion.php";
 
 
 class soldadura_externa{
