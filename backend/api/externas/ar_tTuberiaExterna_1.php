@@ -32,10 +32,12 @@ switch ($_SERVER['REQUEST_METHOD']) {
     case 'GET':
 
         if(isset($_GET['Tex_ID_tubo'])) {
-            echo json_encode(soldadura_externa::Leer_tubo_externa("tuberia_soldadura_externa_1",$_GET['Tex_ID_tubo']));
+            echo "ID de tubo: " . $_GET['Tex_ID_tubo'];
+            //echo json_encode(soldadura_externa::Leer_tubo_externa("tuberia_soldadura_externa_1",$_GET['Tex_ID_tubo']));
         }//end if
         else {
-            echo json_encode(soldadura_externa::Leer_tuberia_externa("tuberia_soldadura_externa_1"));
+            echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA";
+            //echo json_encode(soldadura_externa::Leer_tuberia_externa("tuberia_soldadura_externa_1"));
         }//end else
 
         break;
