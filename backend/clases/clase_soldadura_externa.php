@@ -12,7 +12,7 @@ class soldadura_externa{
                                                           $Tex_FolioOperador,$Tex_Fecha,$Tex_Hora,$Tex_hora_db,
                                                           $Tex_Archivos_excel,$Tex_Observaciones) {
         $conexion_db =new Conexion();
-        $query = "INSERT INTO " .$tuberia_ex123. " (Tex_ID_tubo,Tex_No_tubo,Tex_No_placa,Tex_ID_proyecto,Tex_Lote_alambre,
+        $query = "INSERT INTO " . $tuberia_ex123 . " (Tex_ID_tubo,Tex_No_tubo,Tex_No_placa,Tex_ID_proyecto,Tex_Lote_alambre,
                                          Tex_Lote_fundente,Tex_FolioOperador,Tex_Fecha,Tex_Hora,Tex_hora_db,
                                          Tex_Archivos_excel,Tex_Observaciones)
         VALUES ('$Tex_ID_tubo', '$Tex_No_tubo', '$Tex_No_placa', '$Tex_ID_proyecto','$Tex_Lote_alambre',
