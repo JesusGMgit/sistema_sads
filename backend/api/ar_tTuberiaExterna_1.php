@@ -34,8 +34,8 @@ switch ($_SERVER['REQUEST_METHOD']) {
             echo json_encode(soldadura_externa::Leer_tubo_externa("tuberia_soldadura_externa_1",$_GET['Tex_ID_tubo']));
         }//end if
         else {
-            echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA 34";
-            //echo json_encode(soldadura_externa::Leer_tuberia_externa("tuberia_soldadura_externa_1"));
+            //echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA 34";
+            echo json_encode(soldadura_externa::Leer_tuberia_externa("tuberia_soldadura_externa_1"));
         }//end else
 
         break;
