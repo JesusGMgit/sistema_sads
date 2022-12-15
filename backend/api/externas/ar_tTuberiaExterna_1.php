@@ -1,6 +1,6 @@
 <?php
 
-require_once ($_SERVER['DOCUMENT_ROOT']."/backend/clases/clase_soldadura_externa.php");
+include_once ($_SERVER['DOCUMENT_ROOT']."/backend/clases/clase_soldadura_externa.php");
 header("Content-Type: application/json");
 switch ($_SERVER['REQUEST_METHOD']) {
 
