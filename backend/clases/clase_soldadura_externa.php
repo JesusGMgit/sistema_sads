@@ -90,9 +90,9 @@ class soldadura_externa{
         $conexion_db = new Conexion();
         $query = "UPDATE " .$tuberia_ex123. " SET 
                     Tex_No_tubo='" . $Tex_No_tubo . "', Tex_No_placa='" . $Tex_No_placa . 
-                    "', Tex_ID_proyecto='" . $Tex_ID_proyecto . "', Tex_Lote_alambre='" . $Tex_Lote_alambre . "',Tex_Lote_fundente='" . $Tex_Lote_fundente .
-                    "', Tex_FolioOperador='" . $Tex_FolioOperador . "',Tex_Fecha='" . $Tex_Fecha . "'Tex_Hora='".$Tex_Hora .
-                    "', Tex_Hora_db='" . $Tex_Hora_db . "',Tex_Archivos_excel='" . $Tex_Archivos_excel . "'Tex_Observaciones='" . $Tex_Observaciones .
+                    "', Tex_ID_proyecto='" . $Tex_ID_proyecto . "', Tex_Lote_alambre='" . $Tex_Lote_alambre . "', Tex_Lote_fundente='" . $Tex_Lote_fundente .
+                    "', Tex_FolioOperador='" . $Tex_FolioOperador . "', Tex_Fecha='" . $Tex_Fecha . "', Tex_Hora='".$Tex_Hora .
+                    "', Tex_Hora_db='" . $Tex_Hora_db . "', Tex_Archivos_excel='" . $Tex_Archivos_excel . "', Tex_Observaciones='" . $Tex_Observaciones .
                     "' WHERE Tex_ID_tubo=" . $Tex_ID_tubo;
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
