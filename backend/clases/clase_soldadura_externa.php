@@ -25,6 +25,12 @@ class soldadura_externa{
         return FALSE;
     }//end create_usuario
 
+    //Funciones por busqueda para de registros
+
+    public static function Leer_registros_proyecto($tuberia_ex123,$ID_proyecto){
+        
+    }
+
     public static function Leer_tuberia_externa($tuberia_ex123){
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ". $tuberia_ex123;
