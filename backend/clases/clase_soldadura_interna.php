@@ -49,7 +49,7 @@ class soldadura_interna{
         
         $resultado = $conexion_db->query($query);
         
-        $datos = [];
+        $datos_in = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos_in[]=[
@@ -78,7 +78,7 @@ class soldadura_interna{
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ".  $tuberia_in123." WHERE Tin_ID_tubo=\"" . $ID_tubo . "\"";
         $resultado = $conexion_db->query($query);
-        $datos = [];
+        $datos_in = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos_in[]=[

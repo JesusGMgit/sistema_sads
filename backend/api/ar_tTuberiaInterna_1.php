@@ -39,7 +39,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         }//end if
         else {
             //echo "TODOS LOS REGISTROS DE TUBERIA EXTERNA 34";
-            echo json_encode(soldadura_interna::Leer_tuberia_interna("tuberia_soldadura_externa_1"));
+            echo json_encode(soldadura_interna::Leer_tuberia_interna("tuberia_soldadura_interna_1"));
         }//end else
 
         break;
