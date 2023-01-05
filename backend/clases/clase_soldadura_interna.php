@@ -25,9 +25,20 @@ class soldadura_interna{
         return FALSE;
     }//end create_usuario
 
+    public static function actualizar_RID_tubo($tuberia_in123,$ID, $RID){
+        $conexion_db=new Conexion();
+        $query="UPDATE tuberia_soldadura_interna_1 SET Tin_ID_Rtubo='".$RID."' WHERE Tin_ID_tubo=\"" . $ID . "\"";
+        $conexion_db->query($query);
+        if($conexion_db->affected_rows) {
+            return TRUE;
+        }//end if
+        return FALSE;
+
+    }
+
     //Funciones por busqueda para de registros
 
-    public static function Leer_registros_interna_proyecto($tuberia_in123,$ID_proyecto){
+    public static function Leer_registros_interna_proyecto($tuberia_in123,$ID_proyecto,){
         
     }
 
@@ -65,7 +76,7 @@ class soldadura_interna{
     
     public static function Leer_tubo_interna($tuberia_in123,$ID_tubo) {
         $conexion_db =new Conexion();
-        $query = "SELECT *FROM ".  $tuberia_in123." WHERE Tin_ID_tubo=$ID_tubo";
+        $query = "SELECT *FROM ".  $tuberia_in123." WHERE Tin_ID_tubo=\"" . $ID_tubo . "\"";
         $resultado = $conexion_db->query($query);
         $datos = [];
         if($resultado->num_rows){
@@ -99,7 +110,7 @@ class soldadura_interna{
                     "', Tin_ID_proyecto='" . $Tin_ID_proyecto . "', Tin_Lote_alambre='" . $Tin_Lote_alambre . "', Tin_Lote_fundente='" . $Tin_Lote_fundente .
                     "', Tin_FolioOperador='" . $Tin_FolioOperador . "', Tin_Fecha='" . $Tin_Fecha . "', Tin_Hora='".$Tin_Hora .
                     "', Tin_Hora_db='" . $Tin_Hora_db . "', Tin_Archivos_excel='" . $Tin_Archivos_excel . "', Tin_Observaciones='" . $Tin_Observaciones .
-                    "' WHERE Tin_ID_tubo=" . $Tin_ID_tubo;
+                    "' WHERE Tin_ID_tubo=\"" . $Tin_ID_tubo . "\"";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
@@ -109,7 +120,7 @@ class soldadura_interna{
 
     public static function borrar_tubo_interna($tuberia_in123,$ID_tubo) {
         $conexion_db = new Conexion();
-        $query = "DELETE FROM " . $tuberia_in123 . " WHERE Pro_ID=$ID_tubo";
+        $query = "DELETE FROM " . $tuberia_in123 . " WHERE Pro_ID=\"" . $ID_tubo . "\"";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;

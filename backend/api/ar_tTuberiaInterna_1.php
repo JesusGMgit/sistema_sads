@@ -8,8 +8,11 @@ switch ($_SERVER['REQUEST_METHOD']) {
             
         $_POST=json_decode(file_get_contents('php://input'),true);
         echo json_encode($_POST);
-         
+
         if($_POST != NULL) {
+            if(isset($_POST['Tin_Bfecha'])){
+                echo json_encode(soldadura_interna::actualizar_RID_tubo($_POST['Tin_Bfecha'],$_POST['Tin_BID'],$_POST['Tin_BRID']));
+            }
             if(soldadura_interna::crear_registro_tuberia_interna("tuberia_soldadura_interna_1",$_POST['Tin_ID_tubo'],$_POST['Tin_No_tubo'],$_POST['Tin_No_placa'],
                                         $_POST['Tin_ID_proyecto'],$_POST['Tin_Lote_alambre'],$_POST['Tin_Lote_fundente'],$_POST['Tin_FolioOperador']
                                         ,$_POST['Tin_Fecha'],$_POST['Tin_Hora'],$_POST['Tin_hora_db'],$_POST['Tin_Archivos_excel']
