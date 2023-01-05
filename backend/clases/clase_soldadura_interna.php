@@ -52,7 +52,7 @@ class soldadura_interna{
         $datos = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
-                $datos[]=[
+                $datos_in[]=[
                     'Tin_ID_tubo'=>$row['Tin_ID_tubo'],
                     'Tin_No_tubo'=>$row['Tin_No_tubo'],
                     'Tin_No_placa'=>$row['Tin_No_placa'],
@@ -68,7 +68,7 @@ class soldadura_interna{
                 ];
                 
             }//end while
-            return $datos;
+            return $datos_in;
             
         }//end if
         
@@ -81,7 +81,7 @@ class soldadura_interna{
         $datos = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
-                $datos[]=[
+                $datos_in[]=[
                     'Tin_ID_tubo'=>$row['Tin_ID_tubo'],
                     'Tin_No_tubo'=>$row['Tin_No_tubo'],
                     'Tin_No_placa'=>$row['Tin_No_placa'],
@@ -96,7 +96,7 @@ class soldadura_interna{
                     'Tin_Observaciones'=>$row['Tin_Observaciones']
                 ];
             }//end while
-            return $datos;
+            return $datos_in;
         }//end if
     }//end read_usuario
 
