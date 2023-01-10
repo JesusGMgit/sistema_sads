@@ -11,6 +11,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
         if($_POST != NULL) {
             if(isset($_POST['Tin_AID'])){
+                echo "entro en la api AID";
                 echo json_encode(soldadura_interna::actualizar_RID_tubo("tuberia_soldadura_interna_1",$_POST['Tin_AID'],$_POST['Tin_ARID']));
                 http_response_code(200);
             }
