@@ -26,9 +26,8 @@ class soldadura_interna{
     }//end create_usuario
 
     public static function actualizar_RID_tubo($tuberia_in123,$ID,$RID){
-        echo "entro en la calse";
         $conexion_db=new Conexion();
-        $query="UPDATE " . $tuberia_in123 . "s SET Tin_ID_Rtubo='" . $RID . "' WHERE Tin_ID_tubo=\"" . $ID . "\"";
+        $query="UPDATE " . $tuberia_in123 . " SET Tin_ID_Rtubo='" . $RID . "' WHERE Tin_ID_tubo=\"" . $ID . "\"";
         $conexion_db->query($query);
         if($conexion_db->affected_rows) {
             return TRUE;
