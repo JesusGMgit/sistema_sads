@@ -35,8 +35,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
         if(isset($_GET['fecha'])){
             echo "fecha: " . $_GET['fecha'] . " :";
             echo json_encode(soldadura_interna::obtener_registros_fecha("tuberia_soldadura_interna_1",$_GET['fecha']));
-        }
-        if(isset($_GET['Tin_ID_tubo'])) {
+        }elseif(isset($_GET['Tin_ID_tubo'])) {
             //echo "ID de tubo: " . $_GET['Tin_ID_tubo'];
             echo json_encode(soldadura_interna::Leer_tubo_interna("tuberia_soldadura_interna_1",$_GET['Tin_ID_tubo']));
         }//end if
