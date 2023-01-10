@@ -104,10 +104,11 @@ class soldadura_interna{
         $conexion_db =new Conexion();
         $query = "SELECT *FROM ".  $tuberia_in123." WHERE Tin_Fecha=\"" . $fecha . "\"";
         $resultado = $conexion_db->query($query);
-        $datos_in = [];
+        $datos_fecha = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos_in[]=[
+                    'Tin_Fecha'=>$row['Tin_Fecha'],
                     'Tin_ID_tubo'=>$row['Tin_ID_tubo'],
                     'Tin_No_tubo'=>$row['Tin_No_tubo'],
                     'Tin_No_placa'=>$row['Tin_No_placa'],
@@ -115,14 +116,13 @@ class soldadura_interna{
                     'Tin_Lote_alambre'=>$row['Tin_Lote_alambre'],
                     'Tin_Lote_fundente'=>$row['Tin_Lote_fundente'],
                     'Tin_FolioOperador'=>$row['Tin_FolioOperador'],
-                    'Tin_Fecha'=>$row['Tin_Fecha'],
                     'Tin_Hora'=>$row['Tin_Hora'],
                     'Tin_Hora_db'=>$row['Tin_Hora_db'],
                     'Tin_Archivos_excel'=>$row['Tin_Archivos_excel'],
                     'Tin_Observaciones'=>$row['Tin_Observaciones']
                 ];
             }//end while
-            return $datos_in;
+            return $datos_fecha;
         }//end if
 
     }
