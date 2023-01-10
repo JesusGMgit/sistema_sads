@@ -33,6 +33,7 @@ switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'GET':
         if(isset($_GET['fecha'])){
+            echo "fecha: " . $_GET['fecha'] . " :";
             echo json_encode(soldadura_interna::obtener_registros_fecha("tuberia_soldadura_interna_1",$_GET['fecha']));
         }
         if(isset($_GET['Tin_ID_tubo'])) {
