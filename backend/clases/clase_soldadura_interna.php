@@ -102,12 +102,12 @@ class soldadura_interna{
 
     public static function obtener_registros_fecha($tuberia_in123,$fecha){
         $conexion_db =new Conexion();
-        $query = "SELECT *FROM ".  $tuberia_in123." WHERE Tin_Fecha=\"" . $fecha . "\"";
+        $query = "SELECT *FROM ".  $tuberia_in123 . " WHERE Tin_Fecha=\"" . $fecha . "\"";
         $resultado = $conexion_db->query($query);
         $datos_fecha = [];
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
-                $datos_in[]=[
+                $datos_fecha[]=[
                     'Tin_Fecha'=>$row['Tin_Fecha'],
                     'Tin_ID_tubo'=>$row['Tin_ID_tubo'],
                     'Tin_No_tubo'=>$row['Tin_No_tubo'],
