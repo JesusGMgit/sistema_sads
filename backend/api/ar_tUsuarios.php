@@ -1,7 +1,7 @@
 <?php
 
 require_once "../clases/clase_usuario.php";
-header("Content-Type: application/json");
+//header("Content-Type: application/json");
 switch ($_SERVER['REQUEST_METHOD']) {
 
     case 'POST':
