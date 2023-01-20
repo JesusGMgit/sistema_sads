@@ -45,6 +45,7 @@ class Operador{
         if($resultado->num_rows){
             while($row = $resultado-> fetch_assoc()){
                 $datos[]=[
+                    'Op_ID'=>$row['Op_ID'],
                     'Op_Folio'=>$row['Op_Folio'],
                     'Op_Nombre'=>$row['Op_Nombre'],
                     'Op_Clave_soldador'=>$row['Op_Clave_soldador'],
